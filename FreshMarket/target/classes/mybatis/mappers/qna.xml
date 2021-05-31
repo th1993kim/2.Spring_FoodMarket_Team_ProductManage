@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 참고
+		<![CDATA[ 쿼리문 ]]>
+		쿼리문에 비교연산자(  > >= < <= )가 포함되어 있는 경우
+		문자열로 취급하기위해서   <![CDATA[     ]]> 안에 쿼리문을 작성한다
+ --> 
+<mapper namespace="qna">
+	       
+	<!-- paging위한 전체글 조회  -->
+	<select id="qnaCount" resultType="int" parameterType="int">	
+		SELECT 	count(*)
+		FROM 	QA_BOARD
+		WHERE	is_deleted = 0 and product_id = #{product_id}
+	</select>
+	
+	<!-- 특정범위(paging) 문의 글 조회 -->
+	<select id="qnaList" resultType="QnaBoardDTO" parameterType="com.market.qnaboard.dto.PagingDTO">	
+		SELECT 	qa_id,member_id,email, created_at,content,is_deleted,is_locked,product_id
+		FROM 	QA_BOARD
+		WHERE	is_deleted = 0
+				and product_id = #{product_id}
+		ORDER BY created_at desc
+		limit #{start},#{end}
+	</select>
+		
+	<!-- 문의 답글 조회 -->
+	<select id="qnaCommentList" resultType="QnaBoardCommentDTO">	
+		SELECT 	qa_comment_id,qa_id,member_id,email, created_at,content,is_deleted
+		FROM 		QA_BOARD_COMMENT
+		WHERE		is_deleted = 0
+	</select>	
+	
+	<!-- 문의 글 작성 -->
+	<insert id="qnaWrite"  parameterType="QnaBoardDTO">
+		insert into qa_board(member_id, email, created_at, content, is_deleted, is_locked, product_id) 
+		values(#{member_id}, #{email}, now(), #{content}, 0, #{is_locked}, #{product_id})
+	</insert>	 
+
+	<!-- 문의 글 수정 폼 보여주기 -->
+	<select id="modifyForm" resultType="QnaBoardDTO" parameterType="string">	
+		SELECT 	qa_id,member_id,email, created_at,content,is_deleted,is_locked,product_id
+		FROM 	QA_BOARD
+		WHERE	is_deleted = 0	and qa_id = #{qa_id}
+	</select>
+	
+	<!-- 문의 글 수정 -->
+	<update id="qnaModify" parameterType="QnaBoardDTO">
+		update QA_BOARD
+		set content = #{content}, is_locked = #{is_locked}
+		WHERE qa_id = #{qa_id}
+	</update>
+
+	<!-- 문의 글 삭제 -->
+	<update id="deleteQna" parameterType="string">
+		update QA_BOARD
+		SET		is_deleted = 1
+		WHERE	qa_id = #{qa_id}
+	</update>
+	
+	<!-- 문의 답글 작성 -->
+	<insert id="qnaCommentWrite"  parameterType="QnaBoardCommentDTO">
+		insert into QA_BOARD_COMMENT(qa_id,member_id,email,created_at,content,is_deleted)
+		values(#{qa_id}, #{member_id}, 'admin', now(), #{content}, 0)
+	</insert>	
+	
+	<!-- 답글 삭제 -->
+	<update id="deleteComment" parameterType="string">
+		update QA_BOARD_COMMENT
+		SET		is_deleted = 1
+		WHERE	qa_comment_id = #{qa_comment_id}
+	</update>
+	
+	<!-- 답글 수정 -->
+	<update id="modifyComment" parameterType="QnaBoardCommentDTO">
+		update QA_BOARD_COMMENT
+		set content = #{content}
+		WHERE qa_comment_id = #{qa_comment_id}
+	</update>
+	
+	<!-- 수정된 답글 1개 조회 -->
+	<select id="modifiedComment" parameterType="QnaBoardCommentDTO" resultType="QnaBoardCommentDTO">	
+		SELECT 	qa_comment_id,qa_id,member_id,email, created_at,content,is_deleted
+		FROM 	QA_BOARD_COMMENT
+		WHERE	is_deleted = 0 and qa_comment_id = #{qa_comment_id}
+	</select>	
+	
+</mapper> 
+
+
+  

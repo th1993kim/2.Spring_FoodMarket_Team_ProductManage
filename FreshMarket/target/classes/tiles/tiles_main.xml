@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+	<definition name="baseLayout"
+					template="/WEB-INF/views/common/layout.jsp">
+		<put-attribute name="title"		value="" />
+		<put-attribute name="header" 	value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="side" 		value="/WEB-INF/views/common/side.jsp" />
+		<put-attribute name="body"		value="" />
+		<put-attribute name="footer" 	value="/WEB-INF/views/common/footer.jsp" />
+		<!-- <put-attribute name="quickMenu" value="/WEB-INF/views/common/quickMenu.jsp" /> -->
+	</definition>
+
+	<definition name="noSideLayout"
+					template="/WEB-INF/views/common/noSideLayout.jsp">
+		<put-attribute name="title"		value="" />
+		<put-attribute name="header" 	value="/WEB-INF/views/common/header.jsp" />
+		<put-attribute name="body"		value="" />
+		<put-attribute name="footer" 	value="/WEB-INF/views/common/footer.jsp" />
+		<!-- <put-attribute name="quickMenu" value="/WEB-INF/views/common/quickMenu.jsp" /> -->
+	</definition>
+
+	<definition name="noLayout"
+					template="/WEB-INF/views/common/noLayout.jsp">
+		<put-attribute name="title"		value="" />
+		<put-attribute name="body"		value="" />
+	</definition>
+
+<!-- 김신홍 -->
+	
+	<!-- 회원목록요청시 보여지게 되는 layout -->
+ 	<definition name="member/memberList"  extends="noSideLayout">
+		<put-attribute name="title" value="회원목록" />
+		<put-attribute name="body"  value="/WEB-INF/views/member/memberList.jsp" />
+	</definition>
+
+	<!-- 회원가입 폼보여주는 layout -->
+	<definition name="member/joinForm"  extends="noSideLayout">
+		<put-attribute name="title" value="회원가입" />
+		<put-attribute name="body"  value="/WEB-INF/views/member/joinForm.jsp" />
+	</definition>
+
+	<!-- 로그인 폼보여주는 layout  -->
+	<definition name="member/loginForm"  extends="noSideLayout">
+		<put-attribute name="title" value="로그인" />
+		<put-attribute name="body"  value="/WEB-INF/views/member/loginForm.jsp" />
+	</definition>
+	
+	<!-- 메인화면 보여주는 layout  -->
+	<definition name="main/main"  extends="noLayout">
+		<put-attribute name="title" value="메인" />
+		<put-attribute name="body"  value="/WEB-INF/views/main/main.jsp" />
+	</definition>
+
+	<!-- 상품목록을 보여주는 layout  -->
+	<definition name="userProduct/listProduct"  extends="baseLayout">
+		<put-attribute name="title" value="상품목록" />
+		<put-attribute name="body"  value="/WEB-INF/views/userProduct/listUserProduct.jsp" />
+	</definition>
+
+	<!-- 상품상세 화면을 보여주는 layout  -->
+	<definition name="userProduct/detailUserProduct"  extends="baseLayout">
+		<put-attribute name="title" value="상품상세" />
+		<put-attribute name="body"  value="/WEB-INF/views/userProduct/detailUserProduct.jsp" />
+	</definition>
+
+	<!-- 이벤트상품상세 화면을 보여주는 layout  -->
+	<definition name="userProduct/detailUserEventProduct"  extends="noSideLayout">
+		<put-attribute name="title" value="상품상세" />
+		<put-attribute name="body"  value="/WEB-INF/views/userProduct/detailUserEventProduct.jsp" />
+	</definition>
+
+	<!-- 결제 화면을 보여주는 layout  -->
+	<definition name="orders/ordersForm"  extends="noSideLayout">
+		<put-attribute name="title" value="결제" />
+		<put-attribute name="body"  value="/WEB-INF/views/orders/ordersForm.jsp" />
+	</definition>
+
+	<!-- 바로구매 결제 화면을 보여주는 layout  -->
+	<definition name="orders/directOrdersForm"  extends="noSideLayout">
+		<put-attribute name="title" value="결제" />
+		<put-attribute name="body"  value="/WEB-INF/views/orders/directOrdersForm.jsp" />
+	</definition>
+	
+	<!-- 이벤트 바로구매 결제 화면을 보여주는 layout  -->
+	<definition name="orders/eventDirectOrdersForm"  extends="noSideLayout">
+		<put-attribute name="title" value="결제" />
+		<put-attribute name="body"  value="/WEB-INF/views/orders/eventDirectOrdersForm.jsp" />
+	</definition>
+	
+	<!-- 바로구매 결제 화면을 보여주는 layout  -->
+	<definition name="orders/directOrdersForm"  extends="noSideLayout">
+		<put-attribute name="title" value="결제" />
+		<put-attribute name="body"  value="/WEB-INF/views/orders/directOrdersForm.jsp" />
+	</definition>
+	
+	<!-- 장바구니 화면을 보여주는 layout  -->
+	<definition name="cart/cartForm"  extends="noSideLayout">
+		<put-attribute name="title" value="장바구니" />
+		<put-attribute name="body"  value="/WEB-INF/views/cart/cartForm.jsp" />
+	</definition>
+
+	<!-- 주문/결제 성공 화면을 보여주는 layout  -->
+	<definition name="orders/ordersSuccess"  extends="noSideLayout">
+		<put-attribute name="title" value="주문결제 성공" />
+		<put-attribute name="body"  value="/WEB-INF/views/orders/ordersSuccess.jsp" />
+	</definition>
+	
+	<!-- 주문상세 보여주기  -->
+	<definition name="mypage/orderDetailList"  extends="noSideLayout">
+		<put-attribute name="title" value="마이 페이지" />
+		<put-attribute name="body"  value="/WEB-INF/views/member/orderDetailList.jsp" />
+	</definition>
+
+<!-- 김정인 -->
+	
+	<!-- qnaList 보여주는 layout  -->	
+	<definition name="qna/qnaList"  extends="baseLayout">
+		<put-attribute name="title" value="상품 문의" />
+		<put-attribute name="body"  value="/WEB-INF/views/qna/qnaList.jsp" />
+	</definition>
+
+	<!-- 일별 매출  -->
+	<definition name="sales/salesChart"  extends="noSideLayout">
+		<put-attribute name="title" value="일별 매출" />
+		<put-attribute name="body"  value="/WEB-INF/views/sales/slaesChart.jsp" />
+	</definition>
+	
+	<!-- 마이페이지 보여주기  -->
+	<definition name="mypage/myPage"  extends="noSideLayout">
+		<put-attribute name="title" value="마이 페이지" />
+		<put-attribute name="body"  value="/WEB-INF/views/member/myPage.jsp" />
+	</definition>
+	
+<!-- 김재성 -->
+	
+ 	<!-- 공지화면 보여주는 layout -->
+	<definition name="/notice/noticeList"  extends="noSideLayout">
+		<put-attribute name="title" value="공지목록" />
+		<put-attribute name="body"  value="/WEB-INF/views/notice/noticeList.jsp" />
+	</definition>
+	
+	<!-- 공지글쓰기 폼보여주는 layout -->
+	<definition name="notice/writeForm"  extends="noSideLayout">
+		<put-attribute name="title" value="공지글쓰기" />
+		<put-attribute name="body"  value="/WEB-INF/views/notice/writeForm.jsp" />
+	</definition>
+	
+	<!-- 공지 디테일 layout -->
+	<definition name="/notice/noticeDetail"  extends="baseLayout">
+		<put-attribute name="title" value="공지보기" />
+		<put-attribute name="body"  value="/WEB-INF/views/notice/noticeDetail.jsp" />
+	</definition>
+
+<!-- 박찬식 -->
+	
+	<!-- 이벤트 상품 관리 폼으로 이동 -->
+	<definition name="eventProduct/eventProductManage"  extends="noSideLayout">
+		<put-attribute name="title" value="이벤트상품관리" />
+		<put-attribute name="body"  value="/WEB-INF/views/eventProduct/eventProductManage.jsp" />
+	</definition>
+	
+	<!-- 이벤트 상품 목록으로 이동 -->
+	<definition name="eventProduct/eventProductList"  extends="noSideLayout">
+		<put-attribute name="title" value="이벤트목록" />
+		<put-attribute name="body"  value="/WEB-INF/views/eventProduct/eventProductList.jsp" />
+	</definition>
+	
+		<!-- 이벤트 상품 수정/삭제 폼으로 이동 -->
+	<definition name="eventProduct/eventProductModify"  extends="noSideLayout">
+		<put-attribute name="title" value="상품 수정삭제" />
+		<put-attribute name="body"  value="/WEB-INF/views/eventProduct/eventProductModify.jsp" />
+	</definition>
+<!-- 김태현 -->
+
+	<!-- 상품관리 보여주는 layout -->
+	<definition name="/manage/productManage" extends="noSideLayout">
+		<put-attribute name="title" value="상품관리페이지" />
+		<put-attribute name="body" value="/WEB-INF/views/manage/productManage.jsp" />
+	</definition>
+	
+	<!-- 상품리스트 보여주는 layout -->
+	<definition name="/manage/productList" extends="noSideLayout">
+		<put-attribute name="title" value="상품목록페이지" />
+		<put-attribute name="body" value="/WEB-INF/views/manage/productList.jsp" />
+	</definition>
+	
+<!-- 방준성 -->
+
+	<!-- 리뷰리스트 보여주는 layout -->
+	<definition name="review/reviewList"  extends="baseLayout">
+		<put-attribute name="title" value="이벤트상품관리" />
+		<put-attribute name="body"  value="/WEB-INF/views/review/reviewList.jsp" />
+	</definition>
+</tiles-definitions>
+
+
+
+

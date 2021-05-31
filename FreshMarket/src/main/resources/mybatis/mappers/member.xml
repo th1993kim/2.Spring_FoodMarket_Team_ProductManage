@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 참고
+		<![CDATA[ 쿼리문 ]]>
+		쿼리문에 비교연산자(  > >= < <= )가 포함되어 있는 경우
+		문자열로 취급하기위해서   <![CDATA[     ]]> 안에 쿼리문을 작성한다
+ --> 
+ 
+<!-- member테이블 관련 DML작업을 하는 쿼리문 --> 
+<mapper namespace="member">
+
+	<!-- 회원가입처리 
+		실행하는 쿼리문에 파라미터가 2개이상이면 DTO로 parameterType을 지정한다
+		실행하는 쿼리문에 파라미터가 1개이면      기본형(primitive type)로 parameterType을 지정한다
+	-->
+	<insert id="joinMember"  parameterType="com.market.member.dto.MemberDTO">
+		insert into member(email, password, name, phone, address, member_role, member_status)
+		values(#{email}, #{password}, #{name}, #{phone}, #{address}, 'user', 'active')
+	</insert>
+
+	<!-- 회원목록조회 
+			 다양한 type의  data의 개수가 여러개   => collection, DTO이용
+	-->
+	<select id="getMemberList" resultType="com.market.member.dto.MemberDTO">
+		<![CDATA[ 
+			SELECT 	* 
+			FROM 		MEMBER
+		]]>
+	</select>
+
+	<select id="getMemberDetail" resultType="com.market.member.dto.MemberDTO">
+		<![CDATA[ 
+			SELECT 	member_id,email,password,name,phone,address,member_role,member_status 
+			FROM 		MEMBER
+			WHERE		member_id=#{member_id}
+		]]>
+	</select>
+	
+	<update id="updateMember" >
+	<![CDATA[ 
+			UPDATE 	MEMBER
+			SET			password  = #{password},
+						phone=#{phone},
+						address=#{address}
+			WHERE		member_id=#{member_id}
+		]]>
+	</update>
+	
+	<update id="deleteMember">
+		<![CDATA[ 
+			UPDATE 	MEMBER
+			SET			member_status = 'deleted'
+			WHERE		member_id=#{member_id}
+		]]>
+	</update>
+	
+	<select id="checkDuplicateByEmail" resultType="integer">
+		<![CDATA[ 
+			select count(*) 
+			from member 
+			where email = #{email}
+		]]>
+	</select>
+	
+	<select id="pwdCheck" resultType="_int" parameterType="hashmap">
+		<![CDATA[ 
+			select count(*) 
+			from member 
+			where member_id=#{member_id} and password = #{password}
+		]]>
+	</select>
+	
+	<select id="login" parameterType="hashmap" resultType="com.market.member.dto.MemberDTO">
+		SELECT	member_id,email,password,name,phone,address,member_role,member_status
+		FROM		MEMBER
+		WHERE		email=#{email} AND password=#{password} AND member_status!='deleted'
+	</select>
+	
+	<!-- 회원 주문내역 조회 -->
+<!-- 	<select id="selectOrders" parameterType="_int" resultType="com.market.orders.dto.OrderProductDetailDTO">
+      <![CDATA[ 
+         select   orders.order_date, detail.product_name, detail.order_product_amount,
+                detail.order_product_price, detail.product_id, detail.member_id
+         from     order_product_detail detail, orders
+         where     detail.member_id = #{member_id} AND detail.member_id = orders.member_id
+         order by order_date
+      ]]>
+   </select> -->
+
+	<!-- 회원 주문 조회 -->
+	<select id="selectOrders" parameterType="_int" resultType="OrdersDTO">
+      <![CDATA[ 
+         select   *
+         from     orders
+         where orders.member_id = #{member_id}
+         order by order_date desc;
+      ]]>
+   </select>
+
+	<!-- 회원 주문상세 조회 -->
+	<select id="getOrderDetailList" resultType="OrderProductDetailDTO">
+      <![CDATA[
+         select   *
+         from order_product_detail
+         where order_id = #{order_id}
+         order by order_product_detail_id asc;
+      ]]>
+   </select>
+
+	<!-- 관리자 회원 상태 변경 -->
+	<update id="updateMemberStatus" parameterType="com.market.member.dto.MemberDTO" >
+	<![CDATA[ 
+			UPDATE 		MEMBER
+			SET			member_status  = #{member_status}
+			WHERE		member_id=#{member_id}
+		]]>
+	</update>
+</mapper> 

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- goods테이블관련 sql문 -->
+<mapper namespace="orders">
+	<!-- 리절트 맵 정의 -->
+	<resultMap id="ordersResult" type="OrdersDTO">
+		<result property="order_id" column="order_id" />
+		<result property="member_id" column="member_id" />
+		<result property="orderer_name" column="orderer_name" />
+		<result property="orderer_phone" column="orderer_phone" />
+		<result property="receiver_name" column="receiver_name" />
+		<result property="receiver_address" column="receiver_address" />
+		<result property="receiver_phone" column="receiver_phone" />
+		<result property="orders_product_price" column="orders_product_price" />
+		<result property="delivery_price" column="delivery_price" />
+		<result property="order_all_sum" column="order_all_sum" />
+		<result property="order_date" column="order_date" />
+		<result property="request" column="request" />
+	</resultMap>
+
+	<resultMap id="orderProductDetailResult" type="OrderProductDetailDTO">
+		<result property="order_product_detail_id" column="order_product_detail_id" />
+		<result property="order_id" column="order_id" />
+		<result property="member_id" column="member_id" />
+		<result property="product_id" column="product_id" />
+		<result property="event_product_id" column="event_product_id" />
+		<result property="product_name" column="product_name" />
+		<result property="order_product_amount" column="order_product_amount" />
+		<result property="order_product_price" column="order_product_price" />
+		<result property="product_fixed_price" column="product_fixed_price" />
+	</resultMap>
+
+	<!-- 결제/주문 화면 orders insert -->
+	<insert id="insertOrders" parameterType="int" useGeneratedKeys="true" keyProperty="order_id">
+		insert into orders(member_id,orderer_name,orderer_phone,receiver_name,receiver_address,receiver_phone,orders_product_price,delivery_price,order_all_sum,request) 
+		values(#{member_id},#{orderer_name},#{orderer_phone},#{receiver_name},#{receiver_address},#{receiver_phone},#{orders_product_price},#{delivery_price},#{order_all_sum},#{request})
+	</insert>
+
+	<!-- 결제/주문 화면 order_product_detail insert-->
+	<insert id="insertOrderProductDetail">
+		insert into order_product_detail(order_id,member_id,product_id,event_product_id,product_name,order_product_amount,order_product_price,product_img_path,product_img_name) 
+		values(#{order_id},#{member_id},#{product_id},#{event_product_id},#{product_name},#{order_product_amount},#{order_product_price},#{product_img_path},#{product_img_name})
+	</insert>
+
+   	<!-- 결제/주문 프로세스 empty cart -->
+	<delete id="emptyCart">
+		<![CDATA[
+			DELETE FROM cart
+			WHERE member_id=#{member_id}
+		]]>
+	</delete>
+
+	<!-- product_id와 일치한 상품상세 DTO 가져오기 -->
+	<select id="getLastOrdersDTO" resultMap="ordersResult">
+	    <![CDATA[
+		    select * from orders
+	        where order_id=#{order_id}
+    	]]>
+	</select>
+</mapper>

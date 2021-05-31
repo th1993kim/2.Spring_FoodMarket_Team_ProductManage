@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- goods테이블 관련 sql문 -->
+<mapper namespace="eventProductManage">
+
+	<!-- 리절트 맵 정의 -->
+	<resultMap id="eventProductJoinDTO" type="EventProductJoinDTO">
+		<result property="product_id" column="product_id" />
+		<result property="main_id" column="main_id" />
+		<result property="main_name" column="main_name" />
+		<result property="middle_id" column="middle_id" />
+		<result property="middle_name" column="middle_name" />
+		<result property="product_name" column="product_name" />
+		<result property="product_fixed_price"
+			column="product_fixed_price" />
+		<result property="product_price" column="product_price" />
+		<result property="product_img_path" column="product_img_path" />
+		<result property="product_img_name" column="product_img_name" />
+		<result property="product_detail_path"
+			column="product_detail_path" />
+		<result property="product_detail_name"
+			column="product_detail_name" />
+		<result property="product_list_img_path"
+			column="product_list_img_path" />
+		<result property="product_list_img_name"
+			column="product_list_img_name" />
+		<result property="product_stock" column="product_stock" />
+		<result property="product_total" column="product_total" />
+		<result property="net_weight_per" column="net_weight_per" />
+		<result property="net_weight_total" column="net_weight_total" />
+		<result property="event_product_id" column="event_product_id" />		
+		<result property="event_product_name" column="event_product_name" />
+		<result property="event_product_sale" column="event_product_sale" />
+		<result property="is_plus" column="is_plus" />
+		<result property="event_product_price" column="event_product_price" />
+		<result property="event_product_img_path" column="event_product_img_path" />
+		<result property="event_product_img_name" column="event_product_img_name" />
+		<result property="event_product_detail_path" column="event_product_detail_path" />
+		<result property="event_product_detail_name" column="event_product_detail_name" />
+		<result property="is_locked" column="is_locked" />
+	</resultMap>
+	
+	
+		<insert id="eventProductCreate" parameterType="eventProductDTO">
+		<![CDATA[ INSERT INTO event_product(product_id,event_product_name,product_fixed_price,event_product_sale,is_plus,event_product_price,is_locked)
+					VALUES(#{product_id},
+							#{event_product_name},
+						  		#{product_fixed_price},
+						  		#{event_product_sale},
+								#{is_plus},
+								#{event_product_price},
+								#{is_locked})
+		]]>
+	</insert>
+
+	<!-- 이벤트 상품 목록 가져오기 -->
+	<select id="eventProductList" resultType="EventProductJoinDTO">
+		<![CDATA[
+			SELECT * FROM product p join event_product ep 
+			ON p.product_id = ep.product_id 
+			WHERE ep.is_locked = 0
+			ORDER BY main_id asc
+		]]>
+	</select>
+	
+	<!-- 이벤트 상품DTO 가져오기 -->
+	<select id="getEventProductJoinDTO" resultType="EventProductJoinDTO">
+		<![CDATA[
+			SELECT * FROM product p join event_product ep 
+			ON p.product_id = ep.product_id 
+			WHERE event_product_id = ${event_product_id};
+		]]>
+	</select>	
+	
+	<!-- 이벤트 상품 수정/삭제하기 -->
+	<update id="updateEventProduct" parameterType="eventProductDTO">
+		<![CDATA[ UPDATE event_product
+					 	SET event_product_name = #{event_product_name},
+								event_product_sale = #{event_product_sale},
+								is_plus = #{is_plus},
+						  		event_product_price = #{event_product_price},
+								is_locked = #{is_locked}
+						WHERE event_product_id=#{event_product_id}
+		]]>
+	</update>
+</mapper>

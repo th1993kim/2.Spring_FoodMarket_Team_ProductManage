@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.market.product.user.dto.UserProductDTO" alias="UserProductDTO"/>
+		<typeAlias type="com.market.cart.dto.CartDTO" alias="CartDTO"/>
+		<typeAlias type="com.market.orders.dto.OrdersDTO" alias="OrdersDTO"/>
+		<typeAlias type="com.market.orders.dto.OrderProductDetailDTO" alias="OrderProductDetailDTO"/>
+		<typeAlias type="com.market.qnaboard.dto.QnaBoardDTO" alias="QnaBoardDTO"/>
+		<typeAlias type="com.market.qnaboard.dto.QnaBoardCommentDTO" alias="QnaBoardCommentDTO"/>
+		<typeAlias type="com.market.review.dto.ReviewDTO" alias="ReviewDTO"/>
+		<typeAlias alias="NoticeDTO" type="com.market.notice.dto.NoticeDTO"/>
+		<typeAlias alias="hmap" type="java.util.HashMap"/>
+		<typeAlias type="com.market.product.dto.MainCategoryDTO" alias="mainCategoryDTO"/>
+		<typeAlias type="com.market.product.dto.MiddleCategoryDTO" alias="middleCategoryDTO"/>
+		<typeAlias type="com.market.product.dto.ProductDTO" alias="productDTO"/>
+		<typeAlias type="com.market.product.dto.SearchCommandDTO" alias="searchCommandDTO"/>
+		<typeAlias type="com.market.event_product.dto.EventProductDTO" alias="eventProductDTO"/>
+		<typeAlias type="com.market.event_product.dto.EventProductJoinDTO" alias="EventProductJoinDTO"/>
+		<typeAlias type="com.market.product.user.dto.SearchProductCommandDTO" alias="searchProductCommandDTO"/>
+
+	</typeAliases>
+</configuration>
+

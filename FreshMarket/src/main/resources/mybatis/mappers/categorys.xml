@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- goods테이블 관련 sql문 -->
+<mapper namespace="categorys">
+	<select id="mainCategory" resultType="mainCategoryDTO">
+		select main_id,main_name from main_category
+	</select>
+	<select id="middleCategory" resultType="middleCategoryDTO" parameterType="int">
+		select middle_id,middle_name,main_id 
+		from middle_category 
+		where main_id=#{mainId}
+	</select> 
+	<!-- DTO나 MAP으로 선언되지 않으면 where절을 쓸 수 없다. -->
+	<select id="middleCategory2" resultType="middleCategoryDTO">
+		select middle_id,middle_name,main_id 
+		from middle_category 
+	</select> 
+	<select id="productCategory" resultType="productDTO" parameterType="int">
+		select product_id,product_name from product where middle_id=#{middleId}
+	</select>
+	<insert id="mainCategoryPlus" parameterType="string">
+		insert into main_category(main_name) values(#{mainCategoryInsert})
+	</insert>
+	<select id="mainCategoryPlusSelect" resultType="int">
+		select last_insert_id() from dual
+	</select>
+	<insert id="middleCategoryPlus" parameterType="map">
+		insert into middle_category(middle_name,main_id) values(#{middleCategoryInsert},#{mainCategory})
+	</insert>
+	<select id="middleCategoryPlusSelect" resultType="int">
+		select last_insert_id() from dual
+	</select>
+</mapper>
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 참고
+		<![CDATA[ 쿼리문 ]]>
+		쿼리문에 비교연산자(  > >= < <= )가 포함되어 있는 경우
+		문자열로 취급하기위해서   <![CDATA[     ]]> 안에 쿼리문을 작성한다
+ --> 
+ 
+<!-- member테이블 관련 DML작업을 하는 쿼리문 --> 
+<mapper namespace="sales">
+
+	<!-- 일일 매출 조회(현재달) -->
+	<select id="daily" resultType="com.market.sales.dto.SalesDTO">	
+		<![CDATA[ 
+			SELECT   day_sales_id, order_product_detail_id, order_id, days, day_ordering_count, day_selling_count,
+					 day_selling_amount, day_discount_amount, day_payment_total, day_refund_total, day_net_sales
+			FROM 	 sales
+			WHERE	 days >= MID(now(),1,7) and days < DATE_ADD(NOW(), INTERVAL 1 MONTH)
+			ORDER BY days	
+		]]>
+	</select>
+	
+		
+	<!-- 일일 기간별 조회 -->
+	<select id="dailyPeriod" resultType="com.market.sales.dto.SalesDTO" parameterType="map">	
+		<![CDATA[ 
+			SELECT 	day_sales_id, order_product_detail_id, order_id, days, day_ordering_count, day_selling_count,
+					day_selling_amount, day_discount_amount, day_payment_total, day_refund_total, day_net_sales
+				FROM 	SALES
+				WHERE	days >= #{startDay} and days <= #{endDay} 
+				ORDER BY days
+		]]>
+	</select>
+	
+	
+	<!-- 월별 조회(그해 월별 매출) -->
+	<select id="monthly" resultType="com.market.sales.dto.SalesDTO">	
+		<![CDATA[ 
+			SELECT   MID(days,1,7) monthly, sum(day_ordering_count) day_ordering_count, sum(day_selling_count) day_selling_count,
+					 sum(day_selling_amount) day_selling_amount, sum(day_discount_amount) day_discount_amount,
+					 sum(day_payment_total) day_payment_total, sum(day_refund_total) day_refund_total, sum(day_net_sales) day_net_sales
+			FROM     SALES
+			WHERE	MID(days,1,4) = MID(now(),1,4)
+			GROUP BY monthly
+		]]>
+	</select>
+	
+	
+	<!-- 월별 기간별 조회 -->
+	<select id="monthlyPeriod" resultType="com.market.sales.dto.SalesDTO" parameterType="map">	
+		<![CDATA[ 
+			SELECT MID(days,1,7) monthly,sum(day_ordering_count) day_ordering_count, sum(day_selling_count) day_selling_count,
+					 sum(day_selling_amount) day_selling_amount, sum(day_discount_amount) day_discount_amount,
+					 sum(day_payment_total) day_payment_total, sum(day_refund_total) day_refund_total, sum(day_net_sales) day_net_sales
+			FROM SALES
+			WHERE	days >= #{startDay} and days <= #{endDay}
+			GROUP BY monthly
+		]]>
+	</select> 
+	
+	
+</mapper> 
+
+
+  

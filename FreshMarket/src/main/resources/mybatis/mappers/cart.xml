@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- goods테이블관련 sql문 -->
+<mapper namespace="cart">
+	<!-- 리절트 맵 정의 -->
+	<resultMap id="cartResult" type="CartDTO">
+		<result property="cart_id" column="cart_id" />
+		<result property="member_id" column="member_id" />
+		<result property="product_id" column="product_id" />
+		<result property="event_product_id" column="event_product_id" />
+		<result property="product_name" column="product_name" />
+		<result property="cart_product_price"
+			column="cart_product_price" />
+		<result property="cart_product_amount" column="cart_product_amount" />
+		<result property="product_img_path" column="product_img_path" />
+		<result property="product_img_name" column="product_img_name" />
+	</resultMap>
+
+	<!-- detailProduct 화면 cart insert를 위한 cart count -->
+	<select id="countCart" resultType="int">
+		select COUNT(*) from cart
+		where product_id=#{product_id} and member_id=#{member_id}  
+	</select>
+
+	<!-- detailProduct 화면 cart insert -->
+	<insert id="insertCart">
+		insert into cart(member_id,product_id,event_product_id,product_name,cart_product_price,cart_product_amount,product_img_path,product_img_name) 
+		values(#{member_id},#{product_id},#{event_product_id},#{product_name},#{cart_product_price},#{cart_product_amount},#{product_img_path},#{product_img_name})
+	</insert>
+
+	<!-- detailProduct 화면 cart insert -->
+	<update id="updateCart">
+	    <![CDATA[
+			UPDATE cart set cart_product_amount = cart_product_amount + #{cart_product_amount}
+			WHERE product_id = #{product_id} 
+			AND member_id = #{member_id}
+		]]>
+	</update>
+
+	<!-- cart list -->
+    <select id="listCart" resultType="CartDTO">
+	    <![CDATA[
+	        SELECT *
+	        FROM cart
+	        where member_id = #{member_id}
+	        ORDER BY cart_id
+		]]>
+    </select>
+    
+   	<!-- cart화면 cart plus one amount update -->
+	<update id="updatePlusOneAmount">
+		<![CDATA[
+			UPDATE cart SET cart_product_amount = cart_product_amount + 1 
+			WHERE product_id=#{product_id}
+			AND member_id=#{member_id}
+		]]>
+	</update>
+    
+   	<!-- cart화면 cart minus one amount update -->
+	<update id="updateMinusOneAmount">
+		<![CDATA[
+			UPDATE cart SET cart_product_amount = cart_product_amount - 1 
+			WHERE product_id=#{product_id}
+			AND member_id=#{member_id}
+		]]>
+	</update>
+    
+   	<!-- cart화면 cart cart product delete -->
+	<delete id="updateDelCartProduct">
+		<![CDATA[
+			DELETE FROM cart
+			WHERE product_id=#{product_id}
+			AND member_id=#{member_id}
+		]]>
+	</delete>
+    
+   	<!-- cart화면 cart input amount update -->
+	<update id="updateInputAmountCartProduct">
+		<![CDATA[
+			UPDATE cart SET cart_product_amount = #{cart_product_amount}
+			WHERE product_id=#{product_id}
+			AND member_id=#{member_id}
+		]]>
+	</update>
+
+	<!-- cart sumMoney -->
+    <select id="sumMoney" resultType="int">
+	    <![CDATA[
+	        SELECT COALESCE(SUM(cart_product_price * cart_product_amount), 0) sum_money
+	        FROM cart
+	        WHERE member_id = #{member_id}
+		]]>
+    </select>
+</mapper>

@@ -1,0 +1,1897 @@
+.product-list .prod-type,
+.product-list .open-new,
+.product-list span.near-soldout,
+span.plpBadge span,
+.product-list .number,
+.product-list .premium,
+.no-list-item em,
+.prod-not-find p,
+.prod-not-find a {
+ background:url('//img1a.coupangcdn.com/image/coupang/list/bg_list_sprite_160516.png') no-repeat
+}
+.product-list {
+ width:980px;
+ clear:both
+}
+.product-list:after {
+ display:block;
+ height:0;
+ content:'';
+ clear:both;
+ overflow:hidden
+}
+.product-list ul {
+ width:996px;
+ margin:0 0 0 -16px
+}
+.product-list li {
+ width:314px;
+ height:520px;
+ float:left;
+ margin:0 0 16px 18px;
+ position:relative
+}
+.product-list a {
+ cursor:pointer
+}
+.product-list a,
+.product-list .title,
+.product-list .title span,
+.product-list .title em,
+.product-list .prod-price,
+.product-list .condition {
+ display:block
+}
+.product-list .detail-link {
+ padding:10px;
+ height:499px;
+ background:#fff
+}
+.product-list .detail-link img {
+ width:292px;
+ height:292px
+}
+.product-list .title {
+ padding:5px 5px;
+ font-size:14px;
+ color:#33353d
+}
+.product-list .title span {
+ height:13px;
+ font-size:11px;
+ color:#95979f;
+ font-weight:normal;
+ display:none
+}
+.product-list .title em {
+ height:34px;
+ padding-top:3px;
+ font-weight:bold;
+ letter-spacing:-1px;
+ line-height:17px;
+ overflow:hidden
+}
+.product-list .title .title-attributeCount {
+ font-size:12px;
+ font-weight:normal;
+ letter-spacing:0;
+ padding:3px 0 0 5px;
+ color:#999;
+ display:inline-block
+}
+.product-list .prod-price {
+ padding:0 0 0 5px;
+ margin-top:-2px;
+ overflow:hidden
+}
+.product-list .sale-persent,
+.product-list .prod-type,
+.product-list .price-detail {
+ float:left
+}
+.product-list .sale-persent {
+ width:73px;
+ margin-top:-4px;
+ font:normal 22px Tahoma;
+ color:#e30f13
+}
+.product-list .sale-persent em {
+ font-size:35px
+}
+.product-list .prod-type {
+ height:24px;
+ margin-top:9px;
+ text-indent:-9999em
+}
+.product-list .event {
+ width:60px;
+ margin-right:13px;
+ background-position:0 0
+}
+.product-list .prod-type.coupang-price {
+ width:62px;
+ margin-right:11px;
+ background-position:-80px 0
+}
+.product-list .discounted-price {
+ width:71px;
+ margin-right:12px;
+ background-position:-76px -61px
+}
+.product-list .prod-price .donation-price {
+ width:62px;
+ margin-right:11px;
+ background-position:-224px -72px
+}
+.product-list .total-price {
+ width:67px;
+ margin-top:15px;
+ margin-right:8px;
+ background-position:-300px -35px
+}
+.product-list .use-ticket {
+ width:59px;
+ margin-right:14px;
+ background-position:-153px 0
+}
+.product-list .sale-ticket {
+ width:59px;
+ margin-right:14px;
+ background-position:-225px 0
+}
+.product-list .change-ticket {
+ width:60px;
+ margin-right:13px;
+ background-position:0 -35px
+}
+.product-list .flat-price {
+ width:62px;
+ margin-right:11px;
+ background-position:-80px -35px
+}
+.product-list .contract-sale {
+ width:31px;
+ margin-right:42px;
+ height:35px;
+ margin-top:0;
+ background-position:-153px -35px
+}
+.product-list .present-ticket {
+ width:60px;
+ margin-right:13px;
+ background-position:-225px -35px
+}
+.product-list .price-detail {
+ padding:17px 0 0 0;
+ position:relative
+}
+.product-list .price-detail .original {
+ display:block;
+ height:18px;
+ position:absolute;
+ top:-1px;
+ left:0;
+ font-size:12px;
+ color:#95979f;
+ font-family:Tahoma,"돋움"
+}
+.product-list .price-detail .original span {
+ font-size:14px
+}
+.product-list .price-detail .price {
+ display:inline-block;
+ margin:-4px 0 3px;
+ font-size:14px;
+ color:#33353d
+}
+.product-list .price-detail .price em {
+ font:bold 18px Tahoma
+}
+.product-list .price-detail .price b {
+ font:bold 12px Tahoma
+}
+.product-list .price-detail .comment {
+ display:block;
+ height:15px;
+ font-size:11px;
+ line-height:14px;
+ color:#95979f;
+ width:212px;
+ overflow:hidden
+}
+.product-list .price-detail .comment strong {
+ font-weight:bold;
+ color:#33363b
+}
+.product-list .delivery {
+ display:block;
+ position:relative;
+ top:-4px
+}
+.product-list .delivery:before {
+ display:block;
+ clear:both;
+ content:''
+}
+.product-list .delivery .delivery-info {
+ font-size:12px;
+ color:#555
+}
+.product-list .delivery .arrival-info {
+ font-size:12px;
+ color:#555
+}
+.product-list .delivery .arrival-info span {
+ color:#00891a
+}
+.product-list .delivery .arrival-info.emphasis {
+ font-size:14px;
+ font-weight:bold
+}
+.product-list .subscription-delivery .delivery {
+ padding-left:78px
+}
+.product-list .subscription-delivery .delivery.blank-unit-price {
+ position:absolute;
+ bottom:-16px;
+ top:auto;
+ left:78px;
+ padding:0
+}
+.coupang-global .product-list .price-detail .unit-price {
+ margin-bottom:2px
+}
+.coupang-global .product-list .delivery {
+ padding-left:0
+}
+.product-list .subscription-delivery .price-detail .unit-price {
+ display:block;
+ position:absolute;
+ bottom:3px;
+ left:85px;
+ color:#eb1c23;
+ font-size:12px
+}
+.product-list .price-detail .unit-price {
+ display:block;
+ margin-top:-2px;
+ color:#eb1c23;
+ font-size:12px
+}
+.product-list .price-detail .unit-price em {
+ font-weight:bold
+}
+.product-list .mask {
+ position:absolute;
+ display:block;
+ top:0;
+ right:0;
+ bottom:0;
+ left:0;
+ border:1px solid #d6d6d6
+}
+.abtest-plp-txt .title {
+ font-size:16px
+}
+.product-list .subscription-delivery {
+ display:block;
+ height:50px;
+ padding:4px 0 0 6px
+}
+.product-list .condition .square-price-detail {
+ display:inline-block;
+ position:absolute;
+ top:418px;
+ left:11px;
+ margin:0 10px 0 0;
+ padding:1px 3px 0 3px;
+ border:#999 solid 1px;
+ font-size:.714em;
+ font-weight:bold;
+ color:#999;
+ line-height:13px;
+ font-family:Helvetica,Apple-Gothic,Dotum,"돋움",Gulim,"굴림"
+}
+.product-list .subscription-delivery .price-detail {
+ height:35px;
+ padding:0 5px 0 8px
+}
+.product-list .subscription-delivery .percent {
+ width:72px;
+ text-align:center;
+ color:#fff;
+ margin-top:-1px;
+ font-size:11px;
+ display:inline-block;
+ position:absolute;
+ margin-left:-3px;
+ width:78px\0;
+ white-space:nowrap;
+ margin-top:-2px\0;
+ margin-left:-2px\9
+}
+.product-list .subscription-delivery .percent .subsCart {
+ width:22px;
+ background:url('//img1a.coupangcdn.com/image/coupang/subscription/pc_web/20160304/bg_subs_plp_160304_2x.png') no-repeat 0 0;
+ background-size:71px 133px;
+ line-height:20px;
+ text-indent:-999em;
+ display:inline-block;
+ margin-right:1px;
+ margin-right:2px\9;
+ position:relative;
+ top:-3px
+}
+.product-list .subscription-delivery .percent .sns-plus-badge {
+ background:url('//img1a.coupangcdn.com/image/coupang/subscription/subscribe/checkout/ico_subscribe_plus_lable_checkout_20160224.png') no-repeat;
+ font-size:17px;
+ padding-left:6px;
+ padding-left:5px\0;
+ padding-right:3px;
+ position:relative;
+ top:1px;
+ top:2px\0;
+ height:15px;
+ display:inline-block;
+ margin-left:-2px;
+ margin-left:-4px\0
+}
+.product-list .subscription-delivery .percent .sns-plus-badge span {
+ color:#fff;
+ font-weight:bold;
+ font-size:12px;
+ vertical-align:3.5px;
+ font-family:apple sd gothic neo,malgun gothic,'맑은 고딕',nanumgothic,'나눔고딕',dotum,'돋움',sans-serif;
+ position:relative;
+ top:-1px\0;
+ top:-1px\9
+}
+.product-list .subscription-delivery .percent .sns-plus-badge .spaceTweak {
+ margin-left:2px;
+ letter-spacing:-0.5px;
+ letter-spacing:-1px\0
+}
+.product-list .subscription-delivery .percent .sns-plus-badge .percentSymbol {
+ font-size:9px;
+ margin-left:1px
+}
+.product-list .subscription-delivery .percent strong {
+ vertical-align:middle;
+ letter-spacing:-1px;
+ background-color:#ff9600;
+ padding:1px 1px 1px 0;
+ padding-bottom:0\0;
+ height:12px\0;
+ display:inline-block\0
+}
+.product-list .subscription-delivery .percent strong:last-child,
+.product-list .subscription-delivery .percent strong.last {
+ padding-right:3px;
+ padding-right:2px\9
+}
+.product-list .subscription-delivery .percent .plus {
+ letter-spacing:-0.5px
+}
+.product-list .subscription-delivery .percent .arrow-left {
+ background:url('//img1a.coupangcdn.com/image/coupang/subscription/cart/pc/ico/ico_subscribe_plus_label_cart_2x_20160307.png') no-repeat;
+ width:6px;
+ background-size:52px 14px;
+ text-indent:-999em;
+ display:inline-block;
+ vertical-align:middle;
+ height:13px;
+ background:url(//img1a.coupangcdn.com/image/coupang/subscription/subscribe/checkout/ico_subscribe_plus_lable_checkout_20160224.png) no-repeat\9;
+ background-position:0 -0.7px\9
+}
+.product-list .once-price,
+.product-list .subscription-price {
+ display:block;
+ clear:both;
+ position:relative
+}
+.product-list .once-price .unit-price,
+.product-list .subscription-price .unit-price {
+ display:block;
+ color:#eb1c23;
+ font-size:12px;
+ position:absolute;
+ left:78px;
+ top:18px
+}
+.product-list .once-price .unit-price em,
+.product-list .subscription-price .unit-price em {
+ font-weight:bold
+}
+.product-list .once-price .prod-type,
+.product-list .subscription-price .prod-type {
+ width:70px;
+ height:15px;
+ margin-top:0
+}
+.product-list .once-price .prod-type {
+ background-position:0 -70px
+}
+.product-list .once-price .event-coupon-price {
+ background-position:-76px -70px
+}
+.product-list .subscription-price .prod-type {
+ background-position:0 -95px
+}
+.product-list .subscription-price .prod-type.available,
+.product-list .subscription-delivery .normal-subs,
+.subscription-delivery-product {
+ width:72px;
+ height:33px;
+ display:inline-block;
+ text-indent:-9999em;
+ background:url('//img1a.coupangcdn.com/image/coupang/subscription/pc_web/20160304/bg_subs_plp_160304_2x.png') no-repeat 0 -38px;
+ background-size:71px 133px
+}
+.product-list .subscription-delivery .once-price .prod-type.event-coupon-price {
+ background-position:-76px -70px
+}
+@media screen\0 {
+ .product-list .subscription-delivery .percent .subsCart {
+  background:url('//img1a.coupangcdn.com/image/coupang/list/bg_list_sprite_160223_PLP.png') no-repeat -908px -662px
+ }
+ .product-list .subscription-price .prod-type.available,
+ .product-list .subscription-delivery .normal-subs {
+  background:url('//img1a.coupangcdn.com/image/coupang/list/bg_list_sprite_160223_PLP.png') no-repeat -914px -777px
+ }
+}
+@media screen\9 {
+ .product-list .subscription-delivery .percent .subsCart {
+  background:url('//img1a.coupangcdn.com/image/coupang/list/bg_list_sprite_160223_PLP.png') no-repeat -908px -662px;
+  text-indent:0;
+  font-size:0
+ }
+ .product-list .subscription-price .prod-type.available,
+ .product-list .subscription-delivery .normal-subs {
+  background:url('//img1a.coupangcdn.com/image/coupang/list/bg_list_sprite_160223_PLP.png') no-repeat -914px -777px;
+  text-indent:0;
+  font-size:0;
+  color:transparent
+ }
+}
+.product-list .subscription-price .small-grey-text {
+ font-size:12px;
+ color:#888;
+ letter-spacing:-0.5px;
+ margin-left:2px;
+ display:inline-block;
+ position:relative;
+ *top:-8px
+}
+.small-grey-text2 {
+ font-size:12px;
+ color:#888;
+ letter-spacing:-0.5px
+}
+.product-list .subscription-delivery .prod-type.coupang-price {
+ height:23px;
+ margin-right:0;
+ background-position:-80px 0
+}
+.product-list .condition {
+ height:26px;
+ padding:4px 10px 0 10px;
+ border-top:1px solid #e6e6e6;
+ font-size:11px;
+ color:#95979f;
+ font-family:Tahoma,"돋움";
+ text-align:right;
+ overflow:hidden;
+ position:absolute;
+ bottom:0;
+ right:0;
+ left:0
+}
+.product-list .condition strong {
+ font-weight:normal;
+ color:#fffc00
+}
+.product-list .condition em {
+ font-size:13px;
+ color:#333
+}
+.product-list .condition span {
+ float:left;
+ padding:3px 6px 1px;
+ margin:1px 2px 0 0;
+ color:#fff;
+ font-size:11px;
+ line-height:140%
+}
+.product-list .condition .delivery-free {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#00891a;
+ border:1px solid #00891a;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .delivery-9800 {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#00891a;
+ border:1px solid #00891a;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .delivery-below-9800 {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#00891a;
+ border:1px solid #00891a;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .conditional-delivery-free {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#00891a;
+ border:1px solid #00891a;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .direct-use {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#00891a;
+ border:1px solid #00891a;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .today-open {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#ed1c24;
+ border:1px solid #ed1c24;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .today-close {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#ed1c24;
+ border:1px solid #ed1c24;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .discount-coupon {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#ed1c24;
+ border:1px solid #ed1c24;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .point-save {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#ed1c24;
+ border:1px solid #ed1c24;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .discount {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#ed1c24;
+ border:1px solid #ed1c24;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .save-cash {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#ed1c24;
+ border:1px solid #ed1c24;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .discount-double {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#ed1c24;
+ border:1px solid #ed1c24;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .benefit-double {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#ed1c24;
+ border:1px solid #ed1c24;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .golden-category-coupon {
+ padding:2px 5px 0;
+ background:#fff;
+ color:#ed1c24;
+ border:1px solid #ed1c24;
+ line-height:16px;
+ letter-spacing:-0.1px
+}
+.product-list .condition .delivery-coupang,
+.product-list .condition .encore {
+ background:#777881
+}
+.product-list .condition .comment {
+ display:inline-block;
+ padding:5px 0 0 0;
+ font-size:11px;
+ color:#95979f
+}
+.product-list .dete,
+.product-list .dete span,
+.product-list .dete em {
+ display:block;
+ width:292px;
+ height:23px;
+ position:absolute
+}
+.product-list .dete {
+ left:11px;
+ top:280px
+}
+.product-list .dete em {
+ top:5px;
+ right:12px;
+ color:#e3e3e3;
+ font-size:12px;
+ z-index:2;
+ text-align:right
+}
+.product-list .dete .bg {
+ background:#000;
+ filter:Alpha(opacity=60);
+ opacity:.6;
+ z-index:1;
+ text-indent:-9999em
+}
+.product-list li:hover .mask {
+ border:2px solid #0073e9
+}
+.product-list .open-new {
+ display:block;
+ width:15px;
+ height:12px;
+ position:absolute;
+ right:16px;
+ top:369px;
+ background-position:-342px -10px;
+ text-indent:-9999em
+}
+.product-list .open-new:hover {
+ background-position:-372px -10px
+}
+.product-list span.shadow,
+.product-list span.near-soldout,
+.product-list span.soldout,
+span.plpBadge,
+.product-list span.soldout-rocket {
+ display:block;
+ position:absolute;
+ text-indent:-9999em
+}
+span.plpBadge {
+ width:288px;
+ height:10px;
+ padding-left:4px;
+ left:11px;
+ top:293px
+}
+span.plpBadge span {
+ display:block;
+ width:70px;
+ height:78px;
+ margin-left:2px
+}
+span.plpBadge .delivery-today {
+ width:105px;
+ height:90px;
+ position:absolute;
+ right:0;
+ bottom:0;
+ background-position:-436px -84px
+}
+span.plpBadge .delivery-free,
+span.plpBadge .delivery-9800,
+span.plpBadge .discount,
+span.plpBadge .save-cash,
+span.plpBadge .discount-coupon,
+span.plpBadge .discount-double,
+span.plpBadge .benefit-double,
+span.plpBadge .golden-category-coupon,
+span.plpBadge .delivery-below-9800,
+span.plpBadge .conditional-delivery-free {
+ float:left;
+ margin-top:-74px
+}
+span.plpBadge .delivery-9800 {
+ background-position:-470px 0
+}
+span.plpBadge .delivery-below-9800 {
+ background-position:-550px -91px;
+ text-indent:0;
+ color:#fff;
+ font-size:11px;
+ padding-top:43px;
+ text-align:center;
+ padding-left:0;
+ text-shadow:-1px 0 #377d00,0 1px #377d00,1px 0 #377d00,0 -1px #377d00
+}
+span.plpBadge .delivery-free {
+ background-position:-550px 0
+}
+span.plpBadge .discount {
+ background-position:-630px 0
+}
+span.plpBadge .save-cash {
+ background-position:-630px -91px
+}
+span.plpBadge .discount-coupon {
+ background-position:-710px 0
+}
+span.plpBadge .benefit-double {
+ background-position:-710px -91px
+}
+span.plpBadge .discount-double {
+ background-position:-790px 0
+}
+span.plpBadge .golden-category-coupon {
+ background-position:-790px -91px
+}
+span.plpBadge .conditional-delivery-free {
+ background-position:-870px 0
+}
+span.plpBadge .discount em,
+span.plpBadge .save-cash em {
+ display:block;
+ padding:27px 0 0 0;
+ color:#fff;
+ font-size:11px;
+ color:#fff;
+ text-indent:0;
+ text-align:center
+}
+span.plpBadge .discount strong,
+span.plpBadge .save-cash strong {
+ padding-right:1px;
+ font-size:12px;
+ letter-spacing:0
+}
+.rocket-delivery-product {
+ display:inline-block;
+ width:71px;
+ height:22px;
+ background:url("//img1a.coupangcdn.com/image/coupang/list/plpunit_20160223.png") 0 -670px no-repeat;
+ text-indent:-9999em;
+ margin-top:-6px;
+ vertical-align:text-bottom
+}
+.global-delivery-product {
+ display:inline-block;
+ width:87px;
+ height:22px;
+ background:url("//img1a.coupangcdn.com/image/coupang/list/plpunit_20160223.png") 0 -707px no-repeat;
+ text-indent:-9999em;
+ margin-top:-6px;
+ vertical-align:text-bottom
+}
+.product-list .number {
+ display:block;
+ width:39px;
+ height:52px;
+ position:absolute;
+ left:11px;
+ top:-1px;
+ z-index:2;
+ text-indent:-9999em
+}
+.product-list .no-1 {
+ background-position:0 -192px
+}
+.product-list .no-2 {
+ background-position:-58px -192px
+}
+.product-list .no-3 {
+ background-position:-116px -192px
+}
+.product-list .no-4 {
+ background-position:-174px -192px
+}
+.product-list .no-5 {
+ background-position:-232px -192px
+}
+.product-list .no-6 {
+ background-position:0 -246px
+}
+.product-list .no-7 {
+ background-position:-58px -246px
+}
+.product-list .no-8 {
+ background-position:-116px -246px
+}
+.product-list .no-9 {
+ background-position:-174px -246px
+}
+.product-list .no-10 {
+ background-position:-232px -246px
+}
+.product-list span.shadow {
+ width:292px;
+ height:292px;
+ left:11px;
+ top:11px;
+ background:#000;
+ filter:Alpha(opacity=30);
+ opacity:.3;
+ display:none
+}
+.product-list span.near-soldout {
+ width:292px;
+ height:50px;
+ left:11px;
+ top:253px;
+ background-position:0 -349px;
+ display:none
+}
+.product-list span.soldout {
+ width:292px;
+ height:292px;
+ left:11px;
+ top:11px;
+ background:url("//img1a.coupangcdn.com/image/coupang/list/plpunit_20160223.png") 0 0 no-repeat;
+ display:none
+}
+.product-list.travel span.soldout {
+ width:460px;
+ height:323px;
+ left:11px;
+ top:11px;
+ background-position:0 -746px;
+ display:none
+}
+.product-list li.soldout span.shadow,
+.product-list li.soldout span.soldout,
+.product-list li.soldout span.soldout-rocket {
+ display:block
+}
+.product-list span.soldout-rocket {
+ width:292px;
+ height:80px;
+ left:11px;
+ top:118px;
+ background:url("//img1a.coupangcdn.com/image/coupang/list/plpunit_20160223.png") 0 -300px no-repeat;
+ display:none
+}
+.product-align {
+ height:33px;
+ margin-bottom:20px;
+ padding-top:15px;
+ border-bottom:#008cff solid 1px;
+ position:relative
+}
+.product-align li {
+ float:left;
+ margin-left:2px;
+ z-index:1
+}
+.product-align a {
+ display:block;
+ width:106px;
+ height:33px;
+ text-align:center;
+ line-height:37px;
+ font-size:11px;
+ color:#333;
+ background:#f8f8f8 url("//img1a.coupangcdn.com/image/coupang/common/bg_sort_tab_150428.png") 0 0 no-repeat
+}
+.product-align li.selected {
+ z-index:2
+}
+.product-align li.selected a {
+ height:35px;
+ color:#008cff;
+ background-position:0 -33px;
+ font-weight:bold
+}
+.product-align li.rocket a {
+ text-indent:5px;
+ background-position:0 -68px
+}
+.product-align li.selected.rocket a {
+ height:35px;
+ color:#008cff;
+ background-position:0 -101px;
+ font-weight:bold
+}
+.product-align li.first-item {
+ margin-left:0
+}
+.product-list .term {
+ display:block;
+ position:absolute;
+ left:10px;
+ top:280px;
+ width:292px;
+ height:23px;
+ text-align:right
+}
+.product-list .term .bg {
+ display:block;
+ width:100%;
+ height:100%;
+ background-color:#000;
+ opacity:.6;
+ filter:Alpha(opacity=60)
+}
+.product-list .term span {
+ display:block;
+ position:absolute;
+ right:12px;
+ top:5px;
+ text-align:right;
+ font-weight:normal;
+ font-size:12px;
+ line-height:19px;
+ color:#e3e3e3
+}
+.product-list .premium {
+ display:block;
+ position:absolute;
+ right:11px;
+ top:11px;
+ width:64px;
+ height:45px;
+ background-position:-342px -84px;
+ text-indent:-9999em
+}
+.product-list.travel .term {
+ top:284px;
+ width:460px
+}
+.product-list.travel .condition {
+ padding-top:2px
+}
+.product-list.travel span.shadow {
+ width:460px;
+ height:296px
+}
+.product-list.travel .term+span.plpBadge {
+ top:293px
+}
+.product-list .term+span.plpBadge {
+ top:272px
+}
+.no-list-item {
+ width:280px;
+ margin:0 auto 0;
+ padding:100px 0 150px
+}
+.no-list-item em {
+ display:block;
+ width:280px;
+ height:175px;
+ background-position:-706px -441px;
+ text-indent:-9999em
+}
+.no-list-item.tonight {
+ width:980px;
+ height:1293px;
+ padding:0
+}
+.no-list-item.tonight em {
+ width:980px;
+ height:1293px;
+ background:url('//img1a.coupangcdn.com/image/coupang/travel/info_today_hotel_2.jpg') no-repeat 0 0
+}
+.no-list-item.abTest581 {
+ width:490px;
+ height:68px;
+ margin:0 auto 0;
+ padding:30px 0 30px
+}
+.no-list-item.abTest581 em {
+ display:block;
+ width:490px;
+ height:68px;
+ background-position:0 -752px;
+ text-indent:-9999em
+}
+.no-list-item.tonight.abTest581 {
+ width:980px;
+ height:1293px;
+ padding:0
+}
+.no-list-item.tonight.abTest581 em {
+ width:980px;
+ height:1293px;
+ background:url('//img1a.coupangcdn.com/image/coupang/travel/info_today_hotel_2.jpg') no-repeat 0 0
+}
+.list-section {
+ position:relative;
+ width:980px;
+ clear:both;
+ min-height:700px
+}
+.loading {
+ width:90px;
+ height:90px;
+ position:absolute;
+ left:50%;
+ bottom:200px;
+ margin-left:-45px;
+ background:url('//img1a.coupangcdn.com/image/coupang/list/ico_list_loading.gif') no-repeat;
+ text-indent:-9999em
+}
+.border_detail_link {
+ display:none
+}
+.personalization,
+.personalization h2,
+.personalization .prod-price .coupang-price,
+.personalization .prod-price .total-price {
+ background:url('//img1a.coupangcdn.com/image/coupang/list/bg_personalization_141110.png') no-repeat
+}
+.personalization {
+ height:657px;
+ position:relative;
+ margin:24px 0 0;
+ padding:3px 3px 3px 232px;
+ overflow:hidden
+}
+.personalization h2 {
+ width:246px;
+ height:663px;
+ position:absolute;
+ left:0;
+ top:0;
+ text-indent:-9999em
+}
+.personalization ul {
+ padding:1px 0 0 1px;
+ overflow:hidden
+}
+.personalization ul li {
+ float:left;
+ width:247px;
+ height:327px;
+ border:1px solid #d7d5d8;
+ margin:-1px 0 0 -1px
+}
+.personalization a {
+ display:block;
+ width:217px;
+ height:310px;
+ padding:15px 14px 0;
+ background:#fbfbfd;
+ border:1px solid #fbfbfd;
+ cursor:pointer
+}
+.personalization a:hover {
+ background:#e7e7e8
+}
+.personalization img {
+ width:217px;
+ height:217px
+}
+.personalization .title {
+ display:block;
+ height:40px;
+ padding:10px 0 0 0;
+ font-size:12px;
+ color:#33353d
+}
+.personalization .prod-price {
+ display:block;
+ width:217px;
+ overflow:hidden
+}
+.personalization .prod-price span,
+.personalization .prod-price strong {
+ float:left
+}
+.personalization .prod-price .sale-persent {
+ margin-top:-5px;
+ font:normal 22px 'Tahoma';
+ color:#e30f13
+}
+.personalization .prod-price .sale-persent em {
+ font-size:28px
+}
+.personalization .prod-price .coupang-price {
+ width:52px;
+ height:19px;
+ margin-top:5px;
+ background-position:0 -673px;
+ text-indent:-9999em
+}
+.personalization .prod-price .total-price {
+ width:60px;
+ height:19px;
+ margin-top:5px;
+ background-position:0 -711px;
+ text-indent:-9999em
+}
+.personalization .price {
+ padding:5px 0 0 15px;
+ font-size:14px;
+ color:#33353d
+}
+.personalization .price em {
+ font:bold 17px 'Tahoma'
+}
+.prod-not-find {
+ margin:20px 0 16px 0;
+ padding:60px 0;
+ border:1px solid #d6d6d6;
+ background:#fff
+}
+.prod-not-find p {
+ width:442px;
+ height:199px;
+ margin:0 auto 32px;
+ background-position:0 -847px
+}
+.prod-not-find p strong,
+.prod-not-find p span {
+ display:block;
+ text-indent:-9999em
+}
+.prod-not-find a {
+ display:block;
+ width:173px;
+ height:50px;
+ margin:0 auto 0;
+ background-position:0 -1056px;
+ text-indent:-9999em
+}
+.prod-not-support {
+ margin:100px 0 16px 0;
+ border-bottom:1px solid #fff
+}
+.prod-not-support:after {
+ content:'';
+ display:block;
+ border-bottom:1px solid #ccc
+}
+.prod-not-support p {
+ width:442px;
+ padding-top:201px;
+ margin:0 auto 40px;
+ text-align:center;
+ background:url(//img1a.coupangcdn.com/image/coupang/detail/img_oops.png) no-repeat 50% 0
+}
+.prod-not-support p strong {
+ display:block;
+ font-size:24px;
+ margin-bottom:9px
+}
+.prod-not-support p span {
+ display:block;
+ line-height:22px;
+ font-size:14px;
+ color:#666
+}
+.prod-not-support a {
+ display:block;
+ width:173px;
+ height:50px;
+ margin:0 auto 80px;
+ background-position:0 -1056px;
+ text-indent:-999em
+}
+.product-list-paging.dynamicPLP {
+ display:none;
+ height:54px;
+ width:100%;
+ text-align:center;
+ margin:20px auto 0 auto;
+ background-color:rgba(255,255,255,0.9);
+ position:fixed;
+ z-index:1000;
+ bottom:0;
+ left:0;
+ border-top:1px solid #fff;
+ box-shadow:0 -3px 3px rgba(0,0,0,0.05)
+}
+.product-list-paging.dynamicPLP.fixed {
+ background-color:#fff;
+ position:static;
+ border-top:0;
+ box-shadow:none
+}
+.product-list-paging.dynamicPLP .page-warpper {
+ display:inline-block;
+ width:965px;
+ text-align:center;
+ margin-top:11px
+}
+.product-list-paging.dynamicPLP a {
+ display:inline-block;
+ width:29px;
+ height:29px;
+ margin:0 -2px;
+ color:#555;
+ text-align:center;
+ font-size:12px;
+ font-weight:bold;
+ line-height:30px;
+ vertical-align:middle
+}
+.product-list-paging.dynamicPLP a:hover {
+ text-decoration:underline;
+ color:#f06016;
+ cursor:pointer
+}
+.product-list-paging.dynamicPLP a.selected {
+ color:#0073e9;
+ border:1px solid #0073e9
+}
+.product-list-paging.dynamicPLP a.icon {
+ width:31px;
+ height:31px;
+ background:url("//img1a.coupangcdn.com/image/coupang/list/ico_paging.png") 0 0 no-repeat
+}
+.product-list-paging.dynamicPLP a.prev-page {
+ margin:0 4px 0 -8px;
+ background-position:0 0
+}
+.product-list-paging.dynamicPLP a.prev-page:hover {
+ background-position:0 -34px
+}
+.product-list-paging.dynamicPLP a.next-page {
+ margin:0 -8px 0 4px;
+ background-position:-34px 0
+}
+.product-list-paging.dynamicPLP a.next-page:hover {
+ background-position:-34px -34px
+}
+.product-list-paging.dynamicPLP a span {
+ display:block;
+ text-indent:-9999em
+}
+.product-list-paging.dynamicPLP a.icon.prev-page-dimmed {
+ margin:0 4px 0 -8px;
+ background-position:0 -68px;
+ text-indent:-9999em;
+ vertical-align:middle;
+ cursor:default
+}
+.product-list-paging.dynamicPLP a.icon.next-page-dimmed {
+ margin:0 -8px 0 4px;
+ background-position:-34px -68px;
+ text-indent:-9999em;
+ vertical-align:middle;
+ cursor:default
+}
+.lt-ie9 .product-list-paging.dynamicPLP {
+ background-color:#fff;
+ border-top:1px solid #ccc
+}
+.lt-ie8 .product-list-paging.dynamicPLP .page-warpper {
+ display:inline;
+ zoom:1
+}
+.lt-ie8 .product-list-paging.dynamicPLP a.icon {
+ text-indent:0
+}
+.product-list-paging.dynamic {
+ height:54px;
+ width:100%;
+ text-align:center;
+ margin:20px auto 0 auto;
+ background-color:rgba(255,255,255,0.9);
+ position:fixed;
+ z-index:1000;
+ bottom:0;
+ left:0;
+ border-top:1px solid #fff;
+ box-shadow:0 -3px 3px rgba(0,0,0,0.05)
+}
+.product-list-paging.dynamic.fixed {
+ background-color:transparent;
+ position:static;
+ border-top:0;
+ box-shadow:none
+}
+.product-list-paging.dynamic .page-warpper {
+ display:inline-block;
+ width:965px;
+ text-align:center;
+ margin-top:11px
+}
+.product-list-paging.dynamic a {
+ display:inline-block;
+ width:29px;
+ height:29px;
+ margin:0 -2px;
+ color:#555;
+ text-align:center;
+ font-size:12px;
+ font-weight:bold;
+ line-height:30px;
+ vertical-align:middle
+}
+.product-list-paging.dynamic a:hover {
+ text-decoration:underline;
+ color:#f06016;
+ cursor:pointer
+}
+.product-list-paging.dynamic a.selected {
+ color:#0073e9;
+ border:1px solid #0073e9
+}
+.product-list-paging.dynamic a.icon {
+ width:31px;
+ height:31px;
+ background:url("//img1a.coupangcdn.com/image/coupang/list/ico_paging.png") 0 0 no-repeat
+}
+.product-list-paging.dynamic a.prev-page {
+ margin:0 4px 0 -8px;
+ background-position:0 0
+}
+.product-list-paging.dynamic a.prev-page:hover {
+ background-position:0 -34px
+}
+.product-list-paging.dynamic a.next-page {
+ margin:0 -8px 0 4px;
+ background-position:-34px 0
+}
+.product-list-paging.dynamic a.next-page:hover {
+ background-position:-34px -34px
+}
+.product-list-paging.dynamic a span {
+ display:block;
+ text-indent:-9999em
+}
+.product-list-paging.dynamic a.icon.prev-page-dimmed {
+ margin:0 4px 0 -8px;
+ background-position:0 -68px;
+ text-indent:-9999em;
+ vertical-align:middle;
+ cursor:default
+}
+.product-list-paging.dynamic a.icon.next-page-dimmed {
+ margin:0 -8px 0 4px;
+ background-position:-34px -68px;
+ text-indent:-9999em;
+ vertical-align:middle;
+ cursor:default
+}
+.lt-ie9 .product-list-paging.dynamic {
+ background-color:#fff;
+ border-top:1px solid #ccc
+}
+.lt-ie8 .product-list-paging.dynamic .page-warpper {
+ display:inline;
+ zoom:1
+}
+.lt-ie8 .product-list-paging.dynamic a.icon {
+ text-indent:0
+}
+.product-list-paging {
+ text-align:center;
+ margin:20px auto 40px auto
+}
+.product-list-paging .page-result {
+ display:none
+}
+.product-list-paging a {
+ display:inline-block;
+ width:29px;
+ height:29px;
+ margin:0 -2px;
+ color:#555;
+ text-align:center;
+ font-size:12px;
+ font-weight:bold;
+ line-height:30px;
+ vertical-align:middle;
+ cursor:pointer
+}
+.product-list-paging a:hover {
+ text-decoration:underline;
+ color:#f06016
+}
+.product-list-paging a.selected {
+ color:#0073e9;
+ border:1px solid #0073e9
+}
+.product-list-paging a.icon {
+ width:31px;
+ height:31px;
+ background:url("//img1a.coupangcdn.com/image/coupang/list/ico_paging.png") 0 0 no-repeat
+}
+.product-list-paging a.prev-page {
+ margin:0 4px 0 -8px;
+ background-position:0 0
+}
+.product-list-paging a.prev-page:hover {
+ background-position:0 -34px
+}
+.product-list-paging a.next-page {
+ margin:0 -8px 0 4px;
+ background-position:-34px 0
+}
+.product-list-paging a.next-page:hover {
+ background-position:-34px -34px
+}
+.product-list-paging a span {
+ display:block;
+ text-indent:-9999em
+}
+.product-list-paging a.icon.prev-page-dimmed {
+ margin:0 4px 0 -8px;
+ background-position:0 -68px;
+ text-indent:-9999em;
+ vertical-align:middle;
+ cursor:default
+}
+.product-list-paging a.icon.next-page-dimmed {
+ margin:0 -8px 0 4px;
+ background-position:-34px -68px;
+ text-indent:-9999em;
+ vertical-align:middle;
+ cursor:default
+}
+.sub-top-image {
+ padding:0 0 30px 0
+}
+.sub-top-image img {
+ width:980px
+}
+.popularSearches {
+ display:none
+}
+.product-list.travel li {
+ width:482px;
+ height:484px;
+ margin:0 0 16px 12px
+}
+.product-list.travel .detail-link {
+ height:462px
+}
+.product-list.travel .prod-price {
+ height:59px;
+ margin-top:11px
+}
+.product-list.travel .condition {
+ padding-top:3px
+}
+.product-list.travel .open-new {
+ top:395px
+}
+.product-list.travel .title {
+ top:307px;
+ height:48px
+}
+.product-list.travel .term {
+ top:307px;
+ left:11px;
+ width:452px;
+ height:27px;
+ background-color:#232351;
+ text-align:left;
+ font:normal 12px/28px '돋움','dotum';
+ color:#fff;
+ padding-left:8px
+}
+.product-list.travel .tit-type {
+ display:block;
+ width:315px;
+ height:27px;
+ text-overflow:ellipsis;
+ white-space:nowrap;
+ overflow:hidden
+}
+.product-list.travel .tit-type i {
+ font:bold 12px/28px '돋움','dotum';
+ color:#fd0
+}
+.product-list.travel .title span {
+ right:8px;
+ font:normal 11px/17px '돋움','dotum';
+ letter-spacing:0
+}
+.product-list.travel .title em {
+ padding-top:38px;
+ font-weight:bold;
+ letter-spacing:-1px;
+ line-height:17px;
+ overflow:hidden
+}
+.product-list li.focus,
+.product-list li.focus .detail-link {
+ border:1px solid #0085da
+}
+#sticky-header .coupang-category,
+#sticky-header .sticky-bg,
+#sticky-header .popularSearches,
+#sticky-header .recent-category,
+#sticky-header .related-keyword {
+ display:none
+}
+#sticky-header .coupang-category h2,
+#sticky-header .coupang-category h2 a,
+#sticky-header .recent-category strong,
+#sticky-header.sticky .related-keyword dt {
+ background:url(//img1a.coupangcdn.com/image/coupang/common/bg_header_sticky.png) 0 0 no-repeat
+}
+#sticky-header.sticky {
+ position:fixed;
+ top:0;
+ left:0;
+ right:0;
+ z-index:1001;
+ border-bottom:1px solid #ccc
+}
+.scroll-fix #sticky-header {
+ right:17px
+}
+#sticky-header.sticky .sticky-bg {
+ position:absolute;
+ top:0;
+ right:0;
+ bottom:0;
+ left:0;
+ z-index:0;
+ display:block;
+ background:#fff;
+ filter:Alpha(Opacity=90);
+ opacity:.90
+}
+#sticky-header.sticky section {
+ padding:16px 0 0;
+ z-index:3;
+ border:0;
+ background:transparent;
+ *zoom:1
+}
+#sticky-header.sticky .coupang-category {
+ position:relative;
+ clear:both;
+ float:left;
+ display:block;
+ margin:5px 93px 0 0;
+ text-align:left
+}
+#sticky-header.sticky .coupang-category h2 {
+ position:relative;
+ z-index:2;
+ width:150px;
+ height:34px;
+ background-position:0 2px;
+ background-color:#fff
+}
+#sticky-header.sticky .coupang-category h2 a {
+ display:block;
+ width:148px;
+ height:26px;
+ padding-top:8px;
+ border:#ccc solid 1px;
+ border-bottom:0;
+ background-position:100% -50px;
+ color:#008cff;
+ font-size:14px;
+ z-index:2;
+ text-indent:41px;
+ cursor:default
+}
+#sticky-header.sticky .coupang-category:hover h2 a {
+ width:146px;
+ padding-top:7px;
+ border:#0082ed solid 2px;
+ border-bottom:0;
+ text-indent:40px
+}
+#sticky-header.sticky .category-shadow {
+ display:none;
+ top:34px
+}
+#sticky-header.sticky .coupang-category:hover .category-shadow {
+ display:block
+}
+#sticky-header.sticky .recent-category {
+ display:block;
+ float:right;
+ width:737px;
+ height:20px;
+ overflow:hidden;
+ margin-top:8px
+}
+#sticky-header.sticky .recent-category strong {
+ float:left;
+ width:98px;
+ height:20px;
+ margin-right:15px;
+ background-position:0 -99px;
+ text-indent:-999em
+}
+#sticky-header.sticky .recent-category a {
+ float:left;
+ line-height:23px;
+ margin-right:25px;
+ color:#0073e9;
+ font-size:11px
+}
+#sticky-header.sticky .related-keyword {
+ display:block;
+ float:right;
+ width:737px;
+ height:20px;
+ overflow:hidden;
+ margin-top:8px
+}
+#sticky-header.sticky .related-keyword dt {
+ float:left;
+ width:88px;
+ height:20px;
+ margin-right:15px;
+ background-position:0 -149px;
+ text-indent:-999em
+}
+#sticky-header.sticky .related-keyword a {
+ float:left;
+ line-height:23px;
+ margin-right:25px;
+ color:#0073e9;
+ font-size:11px
+}
+#sticky-header.sticky .header-search-rank {
+ *display:inline;
+ *zoom:1;
+ text-align:left
+}
+#sticky-header .depth-list.banner {
+ margin-top:0
+}
+#sticky-header .gnb-banner img {
+ width:auto;
+ height:auto
+}
+.product-list li.local {
+ height:470px
+}
+.product-list li.local .detail-link {
+ height:448px
+}
+.product-list .location {
+ display:block;
+ height:14px;
+ overflow:hidden;
+ line-height:15px;
+ margin:5px 0 -5px;
+ padding-left:6px;
+ font-size:11px;
+ color:#888
+}
+.product-list .station {
+ padding-left:21px;
+ background:url(//img1a.coupangcdn.com/image/coupang/list/ico_location.png) 6px 0 no-repeat
+}
+.product-list .station em {
+ color:#ddd;
+ font-size:10px
+}
+.product-list .zero-margin-image {
+ height:469px
+}
+.product-list .zero-margin-image .detail-link {
+ height:447px
+}
+.product-list .zero-margin-image img {
+ width:314px;
+ height:314px;
+ margin:-10px -11px 0 -10px
+}
+.product-list .zero-margin-image .detail-link:hover {
+ overflow:hidden
+}
+.product-list .zero-margin-image .term {
+ top:291px;
+ left:0;
+ right:0;
+ width:auto
+}
+.product-list .zero-margin-image .term span {
+ left:12px;
+ top:3px;
+ text-align:left
+}
+.product-list .zero-margin-image .term strong {
+ font-weight:normal
+}
+.product-list .visited,
+.product-list .visited .detail-link {
+ border:1px solid #888;
+ overflow:hidden
+}
+.product-list .visited .visited-flag,
+.card-list .visited .visited-flag {
+ position:absolute;
+ top:1px;
+ left:1px;
+ right:1px;
+ z-index:1;
+ height:32px;
+ line-height:32px;
+ background:#888;
+ text-align:center;
+ color:#fff;
+ font-weight:bold;
+ font-size:12px
+}
+.card-list .subscription-delivery-product {
+ width:56px;
+ height:21px;
+ display:inline-block;
+ background:url("//img1a.coupangcdn.com/image/coupang/subscription/pc_web/20160304/sp_subs_srp_2x.png") no-repeat 0 -26px;
+ background-size:56px 44px;
+ margin-top:3px
+}
+.list-section .dream-deal {
+ display:block;
+ width:69px;
+ height:68px;
+ position:absolute;
+ left:16px;
+ top:207px;
+ z-index:2;
+ text-indent:-9999em
+}
+.product-list .dream-deal {
+ display:block;
+ width:69px;
+ height:68px;
+ position:absolute;
+ left:16px;
+ top:229px;
+ z-index:2;
+ text-indent:-9999em
+}
+.product-list .term+.dream-deal {
+ position:absolute;
+ left:16px;
+ top:207px
+}
+.dream-deal {
+ display:block;
+ width:69px;
+ height:68px;
+ position:absolute;
+ left:7px;
+ top:160px;
+ z-index:2;
+ text-indent:-9999em
+}
+.term+.dream-deal {
+ position:absolute;
+ left:7px;
+ top:130px
+}
+.dream-deal.discount {
+ background:url('//img1a.coupangcdn.com/image/coupang/travel/event/ico_dream_deal01.png') no-repeat
+}
+.dream-deal.gift {
+ background:url('//img1a.coupangcdn.com/image/coupang/travel/event/ico_dream_deal02.png') no-repeat
+}
+.dream-deal.real-time-pension {
+ background:url('//img1a.coupangcdn.com/image/coupang/travel/cornertag/instant_pension_discount_6.png') no-repeat
+}
+.product-list.travel .dream-deal {
+ display:block;
+ width:69px;
+ height:68px;
+ position:absolute;
+ left:17px;
+ top:234px;
+ z-index:2;
+ text-indent:-9999em
+}
+.product-list.travel .term+.dream-deal {
+ position:absolute;
+ left:16px;
+ top:234px
+}
+.product-list.travel .dream-deal.discount {
+ background:url('//img1a.coupangcdn.com/image/coupang/travel/event/ico_dream_deal01.png') no-repeat
+}
+.product-list.travel .dream-deal.gift {
+ background:url('//img1a.coupangcdn.com/image/coupang/travel/event/ico_dream_deal02.png') no-repeat
+}
+.product-list .cell-bottom {
+ bottom:35px;
+ position:absolute;
+ left:10px
+}
+.product-list .bestseller-badge {
+ color:#888;
+ font-size:12px;
+ margin-left:5px;
+ letter-spacing:-1px;
+ display:inline-block
+}
+.product-list .bestseller-badge .top-badge {
+ width:14px;
+ height:12px;
+ margin-bottom:-1px;
+ vertical-align:baseline
+}
+.product-list .bestseller-badge .top-text {
+ color:#ff9600;
+ margin-left:2px;
+ font-weight:bold
+}
+.product-list .bestseller-badge .top-category {
+ margin-left:4px;
+ max-width:120px;
+ display:inline-block;
+ text-overflow:ellipsis;
+ overflow:hidden;
+ white-space:nowrap;
+ position:relative;
+ vertical-align:bottom;
+ padding-right:1px
+}
+.product-list.travel {
+ font-family:apple sd gothic neo,malgun gothic,'맑은 고딕',nanumgothic,'나눔고딕',dotum,'돋움',sans-serif
+}
+.product-list .travel-title {
+ font-size:14px;
+ color:#333
+}
+.product-list .travel-price-info {
+ display:block;
+ align:bottom;
+ margin-top:6px
+}
+.product-list .travel-price-info .travel-price-tag-type {
+ font-size:16px;
+ color:#ae0000
+}
+.product-list .travel-price-info .travel-seperator {
+ font-size:14px;
+ color:#ddd;
+ margin-left:2px
+}
+.product-list .travel-price-info .travel-discount-rate {
+ font-size:14px;
+ color:#111;
+ margin-right:2px
+}
+.product-list .travel-price-info .original {
+ font-size:14px;
+ color:#888
+}
+.product-list .travel-price-info:after {
+ clear:both;
+ content:' ';
+ display:block
+}
+.product-list .travel-price-detail .price-detail {
+ display:block;
+ padding:0;
+ margin-top:2px;
+ margin-right:20px
+}
+.product-list .travel-price-detail .price-detail .price em {
+ font-size:20px;
+ color:#ae0000;
+ font-weight:bold
+}
+.product-list .travel-price-detail .price-detail .price .won {
+ font-size:16px;
+ color:#ae0000;
+ font-weight:normal;
+ margin-right:6px
+}
+.product-list .travel-price-detail .price-detail .comment {
+ display:inline;
+ font-size:11px;
+ color:#888
+}

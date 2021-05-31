@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+					PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+					"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- notice테이블관련 sql문 -->
+<mapper namespace="notice">
+<!-- 공지리스트 -->
+<select id="getNoticeList" resultType="NoticeDTO">
+<![CDATA[
+	SELECT notice_id,member_id,email,created_at,view_count,title,content,is_deleted
+	FROM NOTICE_BOARD
+	WHERE is_deleted = 0
+]]>
+
+</select>
+
+<!-- 공지 조회 -->
+	<select id="noticeDetail" 
+				  parameterType="int"
+				  resultType="NoticeDTO">	
+		SELECT 	notice_id,member_id,email,created_at,view_count,title,content,is_deleted 
+		FROM 		NOTICE_BOARD
+				WHERE NOTICE_ID =#{notice_id}
+						
+	</select>			
+
+<!-- 공지 글쓰기 -->
+<insert id="writeNotice"  parameterType="NoticeDTO">
+		INSERT INTO notice_board(member_id,email,title,content)
+		VALUES(#{member_id}, #{email}, #{title}, #{content})
+</insert>
+
+<!-- 공지삭제 -->
+
+<update id="deleteNotice" parameterType="string">
+	UPDATE NOTICE_BOARD
+	SET 		is_deleted =1
+	WHERE 		notice_id  	   =#{notice_id}
+</update>
+
+<!-- 공지 조회수 -->
+<update id="noticeCountPlus" parameterType="int">
+	UPDATE NOTICE_BOARD
+		SET  view_count = view_count+1
+	WHERE 		notice_id  	   =#{notice_id}
+</update>
+</mapper>

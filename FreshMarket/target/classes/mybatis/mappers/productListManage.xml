@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- goods테이블 관련 sql문 -->
+<mapper namespace="productListManage">
+
+	<!-- 검색 ,조회 기능 -->
+	<select id="selectCount" resultType="int" parameterType="searchCommandDTO">
+		SELECT count(*)
+		FROM PRODUCT
+		<where>
+			<if test="main_id !=0 and main_id != null">
+				main_id=#{main_id}
+			</if>
+			<if test="middle_id !=0 and middle_id != null">
+				AND middle_id=#{middle_id}
+			</if>
+			<if test="is_locked !=2 and is_locked != null">
+				AND is_locked=#{is_locked}
+			</if>
+			<if test="typeSearch != '' and typeSearch != null and searchText != null">
+				AND ${typeSearch} like CONCAT('%',#{searchText},'%')
+			</if>
+		</where>
+	</select>
+	<!-- 주의  -->
+	<select id="getProductList" parameterType="searchCommandDTO" resultType="productDTO">
+			SELECT *
+			FROM (
+				SELECT p.*,ma.main_name main_name,mi.middle_name middle_name 
+				FROM product p,main_category ma ,middle_category mi 
+				WHERE p.main_id=ma.main_id and p.middle_id=mi.middle_id 
+					<if test="main_id != 0 and main_id != null">
+						AND p.main_id=#{main_id}
+					</if>
+					<if test="middle_id != 0 and middle_id != null">
+						AND p.middle_id=#{middle_id}
+					</if>
+					<if test="is_locked != 2 and is_locked != null">
+						AND p.is_locked=#{is_locked}
+					</if>
+					<if test="typeSearch != '' and typeSearch != null and searchText != null">
+						AND p.${typeSearch} like CONCAT('%',#{searchText},'%')
+					</if>
+				<if test="orderBy !='' and orderBy != null">
+				ORDER BY
+				<choose>
+					<when test="orderBy=='nameAsc'">
+						product_name asc
+					</when>
+					<when test="orderBy=='nameDes'">
+						product_name desc
+					</when>
+					<when test="orderBy=='priceAsc'">
+						product_price asc
+					</when>
+					<when test="orderBy=='priceDes'">
+						product_price desc
+					</when>
+				</choose>
+			</if>	 
+			) product
+			
+			LIMIT #{startNum}, #{seeCount}
+	</select>
+	
+	<update id="updateStock" parameterType="map">
+		UPDATE product
+		SET product_stock=#{product_stock}
+		WHERE product_id=#{product_id}
+	</update>
+	
+	<update id="updateSale" parameterType="map">
+		UPDATE product
+		SET is_locked =#{sale}
+		WHERE product_id=#{checked_id}
+	</update>
+</mapper>
+

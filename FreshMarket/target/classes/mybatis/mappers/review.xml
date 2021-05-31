@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+					PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+					"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- review테이블관련 sql문 -->
+<mapper namespace="review">
+
+	<select id="review_list" resultType="ReviewDTO"   parameterType="com.market.review.dto.ReviewPagingDTO">
+	    <![CDATA[
+		SELECT   @ROWNUM := @ROWNUM + 1 AS NUM,
+          review_board.*
+    	FROM  review_board,(SELECT @ROWNUM := 0 ) TMP
+    	WHERE  is_deleted = 0 AND  product_id=#{product_id}
+    	ORDER BY  created_at ASC
+		LIMIT #{start},#{end}
+		]]>
+	</select>
+	
+
+<!-- paging위한 전체글 조회  -->
+	<select id="review_page" resultType="int" parameterType="int">	
+		SELECT 	count(*)
+		FROM 	review_board
+		WHERE	is_deleted = 0 and product_id=#{product_id}
+	</select>	
+	
+
+ <insert id="review_insert" parameterType="ReviewDTO">
+	    <![CDATA[
+			INSERT INTO review_board(
+																 product_id, 
+																 member_id,
+																 name,
+																 content,
+																 review_star,
+																 review_image)
+										   VALUES ( 
+										   						#{product_id},
+										   						#{member_id},
+										   						#{name},
+										   						#{content},
+										   						#{review_star},
+										   						#{review_image})
+		]]>
+	</insert>
+	
+	<select id="reviewOneSelect" resultType="ReviewDTO"   parameterType="string">
+	    <![CDATA[
+							SELECT   *
+					    	FROM  review_board
+					    	where   review_id=#{review_id}
+		]]>
+	</select>
+	
+
+ 	 <update id="review_update"  parameterType="ReviewDTO">
+	    <![CDATA[
+								update review_board
+								set  		content=#{content},
+											review_star= #{review_star}
+								where   
+							   				review_id=#{review_id}
+		]]>
+	</update>
+	
+	 	 <update id="review_Delete"  parameterType="_int">
+	    <![CDATA[
+								update review_board
+								set  		is_deleted=1
+								where   
+							   				review_id=#{review_id}
+		]]>
+	</update>
+
+</mapper>

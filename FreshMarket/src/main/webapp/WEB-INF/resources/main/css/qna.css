@@ -1,0 +1,72 @@
+@charset "UTF-8";
+.form, .modifyForm{
+	display:none;
+}
+#qna td{
+	border-bottom:1px solid #c2c2d6; 
+}
+.title{
+	display:inline-block;
+	padding:5px;
+}
+.writeCmt, .modifyForm{
+	padding-right:30px;
+	padding-left:10px;
+	margin:20px 20px 10px;
+}
+.box{
+	position:relative;
+	margin-bottom:20px;
+	margin-top:10px;
+	padding:15px 15px 0;
+}
+.btnWrite, .btnModify{
+	position:absolute;
+	right:10px;
+	bottom:20px;
+}
+.email{
+	position:absolute;
+	top:0px;
+	right:5px;
+	font-size:0.8rem;
+}
+.content{
+	position:relative;
+	display:inline-block;
+	padding:5px;
+	width:90%;
+	padding-left:30px;
+	font-size:1rem;
+}
+.comment{
+	font-size:1rem;
+	width:85%;
+	margin-left:70px;
+	margin-top:5px;
+	padding-bottom:20px;
+	position:relative;
+	display:inline-block;
+}
+.btnBox{
+	display:block;
+	position:absolute;
+	right:10px;
+	bottom:-10px;
+}
+a{
+	cursor:pointer;
+}
+.answer, .q{
+	display:inline-block;
+	position:absolute;
+}
+#qna tr:nth-child(2) td{
+	border-bottom:3px solid black;
+}
+.notice{
+	padding:10px;
+}
+#bodyWrap{
+	margin-bottom:20px;
+}

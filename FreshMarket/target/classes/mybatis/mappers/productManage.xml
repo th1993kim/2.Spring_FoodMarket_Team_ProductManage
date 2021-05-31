@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- goods테이블 관련 sql문 -->
+<mapper namespace="productManage">
+	
+	<insert id="insertProduct" parameterType="productDTO">
+		<![CDATA[insert into product (main_id,middle_id,product_name,product_fixed_price,
+														product_price,product_img_path,product_img_name,
+														product_detail_path,product_detail_name,product_list_img_path,
+														product_list_img_name,product_stock,product_total,
+														net_weight_per,net_weight_total,is_locked)
+											values (#{main_id},#{middle_id},#{product_name},#{product_fixed_price},#{product_price},
+														#{product_img_path},#{product_img_name},#{product_detail_path},#{product_detail_name},
+														#{product_list_img_path},#{product_list_img_name},#{product_stock},#{product_total},
+														#{net_weight_per},#{net_weight_total},#{is_locked})				
+		]]>								
+	</insert>
+	 
+	 <!-- auto_incresed값 가져오기  -->
+	<select id="autoProductId" resultType="int">
+		<![CDATA[SELECT AUTO_INCREMENT
+						FROM information_schema.tables
+						WHERE table_name = 'product'
+						AND table_schema = 'project'
+		]]>
+	</select>
+	
+	<!-- 상품 목록가져오기  -->
+	<select id="selectProduct" resultType="productDTO" parameterType="int">
+		<![CDATA[SELECT  product_id,main_id,middle_id,product_name,product_fixed_price,
+									 product_price,product_img_path,product_img_name,
+									 product_detail_path,product_detail_name,product_list_img_path,
+									 product_list_img_name,product_stock,product_total,
+									 net_weight_per,net_weight_total,is_locked 
+						FROM  product
+						WHERE product_id=#{product_id}			 
+		]]>
+	</select>
+	
+	<!-- 상품 상세이미지의 파일명 가져오기 -->
+	<select id="getProductImagesName" resultType="map" parameterType="int">
+		<![CDATA[	SELECT product_detail_name,
+									product_img_name,
+									product_list_img_name
+						FROM product
+						WHERE product_id=#{product_id}
+		]]>
+	</select>
+	
+	<update id="changeProduct" parameterType="productDTO">
+		<![CDATA[ UPDATE product
+					 	SET  main_id =#{main_id},
+						  		middle_id = #{middle_id},
+						  		product_name = #{product_name},
+						  		product_fixed_price = #{product_fixed_price},
+						  		product_price = #{product_price},
+								product_img_name = #{product_img_name},
+								product_detail_name = #{product_detail_name},
+								product_stock = #{product_stock},
+								product_total = #{product_total},
+								net_weight_per = #{net_weight_per},
+								net_weight_total = #{net_weight_total},
+								is_locked = #{is_locked}
+						WHERE product_id=#{product_id}
+		]]>
+	</update>
+</mapper>
+

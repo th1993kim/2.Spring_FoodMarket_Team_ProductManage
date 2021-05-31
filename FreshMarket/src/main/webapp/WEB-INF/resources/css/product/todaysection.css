@@ -1,0 +1,424 @@
+.main-today .today-prod .selected span,
+.today-prod span a,
+.main-today .today-prod strong,
+.today-prod h2 {
+ background:url('//img1a.coupangcdn.com/image/coupang/category/bg_recommend_sprite_1016.png') no-repeat
+}
+.today-prod {
+ position:relative;
+ z-index:1
+}
+.today-prod li {
+ z-index:1
+}
+.today-prod li.selected {
+ z-index:2
+}
+.today-prod h2 {
+ position:absolute;
+ top:20px;
+ left:-5px;
+ width:167px;
+ height:40px;
+ text-indent:-999em;
+ z-index:3
+}
+.today-item-area {
+ width:810px;
+ margin:0 0 0 170px;
+ padding-top:20px
+}
+.main-today.abTest1030 {
+ height:440px
+}
+.main-today.abTest1030 .today-container {
+ margin-top:13px
+}
+.main-today.abTest1030 .main__today-hot {
+ margin:28px 0 0 0
+}
+.main-today {
+ width:100%;
+ height:415px;
+ overflow:hidden;
+ background:url('//img1a.coupangcdn.com/image/coupang/main/ico_today_pattern.png')
+}
+.main-today h2 {
+ background-position:0 -39px;
+ top:34px;
+ left:160px
+}
+.main-today .today-prod {
+ width:815px;
+ margin:0 auto;
+ padding:15px 0 0 165px
+}
+#today-selected-thumbnail {
+ position:relative;
+ width:614px
+}
+#today-selected-thumbnail a.todays-hot-deal-soldout {
+ cursor:default
+}
+#today-selected-thumbnail .todays-hot-closedeal-btn {
+ position:absolute;
+ width:150px;
+ height:56px;
+ left:46px;
+ bottom:37px;
+ background:url('//img1a.coupangcdn.com/image/coupang/main/bg_main_sprite_151002.png') no-repeat;
+ background-position:-120px -470px
+}
+#dynamic-price {
+ position:relative;
+ z-index:4;
+ color:#ed1c24;
+ font-family:apple sd gothic neo,malgun gothic,'맑은 고딕',nanumgothic,'나눔고딕',dotum,'돋움',sans-serif
+}
+#dynamic-price .sale-persent {
+ position:absolute;
+ top:185px;
+ left:43px;
+ font-size:24px;
+ font-family:Tahoma,돋움
+}
+#dynamic-price .sale-persent em {
+ font-size:50px
+}
+#dynamic-price .original {
+ position:absolute;
+ top:195px;
+ left:130px;
+ color:#95979f;
+ font-size:12px;
+ display:inline-block;
+ letter-spacing:-0.5px
+}
+#dynamic-price .original span {
+ position:relative;
+ top:1px;
+ font-size:15px
+}
+#dynamic-price .salesPrice {
+ position:absolute;
+ top:210px;
+ left:130px;
+ font-size:16px;
+ color:#222;
+ font-weight:bold;
+ display:inline-block;
+ letter-spacing:-0.3px
+}
+#dynamic-price .salesPrice em {
+ position:relative;
+ top:1px;
+ font-size:24px;
+ font-weight:bold
+}
+#dynamic-price .discount-comment {
+ position:absolute;
+ top:241px;
+ left:130px;
+ font-size:11px;
+ color:#888;
+ font-weight:normal;
+ display:inline-block;
+ letter-spacing:-1px
+}
+#dynamic-price .prod-type {
+ position:absolute;
+ top:191px;
+ left:47px;
+ height:20px;
+ font-size:20px;
+ font-weight:bold
+}
+#dynamic-price .price {
+ position:absolute;
+ top:210px;
+ left:47px;
+ font-size:16px;
+ color:#222;
+ font-weight:bold;
+ display:inline-block;
+ letter-spacing:-0.3px
+}
+#dynamic-price .price em {
+ position:relative;
+ top:1px;
+ font-size:24px;
+ font-weight:bold
+}
+#dynamic-price .comment {
+ position:absolute;
+ top:241px;
+ left:47px;
+ font-size:11px;
+ color:#888;
+ font-weight:normal;
+ display:inline-block;
+ letter-spacing:-1px
+}
+#dynamic-price .benefitArea {
+ position:absolute;
+ top:246px;
+ left:47px;
+ font-size:13px;
+ font-weight:bold;
+ color:#333;
+ border:1px solid #ed1c24;
+ border:1px solid rgba(237,28,36,.3);
+ padding:1px 8px;
+ font-family:'돋움',dotum
+}
+#dynamic-price .benefitArea em {
+ position:relative;
+ color:#ed1c24;
+ font-weight:bold;
+ font-family:'돋움',dotum
+}
+#dynamic-price .priceInfo-benefitArea {
+ position:absolute;
+ top:261px;
+ left:47px;
+ font-size:13px;
+ font-weight:bold;
+ color:#333;
+ border:1px solid #ed1c24;
+ border:1px solid rgba(237,28,36,.3);
+ padding:1px 8px;
+ font-family:'돋움',dotum
+}
+#dynamic-price .priceInfo-benefitArea em {
+ position:relative;
+ color:#ed1c24;
+ font-weight:bold;
+ font-family:'돋움',dotum
+}
+.thumbnail-dynamic-price {
+ position:relative;
+ z-index:4;
+ color:#ed1c24;
+ font-family:apple sd gothic neo,malgun gothic,'맑은 고딕',nanumgothic,'나눔고딕',dotum,'돋움',sans-serif;
+ font-size:15px;
+ font-weight:bold
+}
+.thumbnail-dynamic-price .sale-persent {
+ position:absolute;
+ top:29px;
+ left:17px;
+ font-size:12px;
+ font-family:Tahoma,돋움
+}
+.thumbnail-dynamic-price .sale-persent em {
+ font-size:18px
+}
+.thumbnail-dynamic-price .prod-type {
+ position:absolute;
+ top:32px;
+ left:15px
+}
+#today-selected-thumbnail a {
+ width:614px;
+ height:383px
+}
+#today-selected-thumbnail img {
+ border:#bbb solid 1px;
+ border-right:0
+}
+.today-thumbnail {
+ position:absolute;
+ top:15px;
+ right:0;
+ width:206px;
+ height:385px;
+ overflow:hidden
+}
+.today-thumbnail li {
+ width:200px;
+ height:65px;
+ margin-top:-1px;
+ position:relative;
+ z-index:1;
+ padding-left:6px
+}
+.today-thumbnail li.first-item {
+ margin-top:0
+}
+.today-thumbnail a {
+ display:block;
+ width:198px;
+ height:63px;
+ border:#bbb solid 1px;
+ overflow:hidden
+}
+.today-thumbnail a.todays-hot-deal-soldout {
+ cursor:default
+}
+.today-thumbnail li.today-selected a {
+ border:#333 solid 1px
+}
+.today-thumbnail li.today-selected {
+ background:url('//img1a.coupangcdn.com/image/coupang/category/bg_recommend_sprite_1016.png') -555px 27px no-repeat;
+ z-index:2
+}
+.today-selected img {
+ margin-left:-198px
+}
+.today-selected .thumbnail-dynamic-price {
+ color:#fff
+}
+.today-selected .thumbnail-dynamic-price .sale-persent {
+ color:#fff;
+ font-family:Tahoma,돋움
+}
+.today-selected .thumbnail-dynamic-price .prod-type {
+ position:absolute;
+ top:32px;
+ left:15px
+}
+.today-item-paging a {
+ background:url('//img1a.coupangcdn.com/image/coupang/category/category_image_sprite_0820.png') -1px -158px no-repeat
+}
+.today-item-paging {
+ height:12px;
+ position:absolute;
+ bottom:20px;
+ left:39px;
+ overflow:hidden
+}
+.today-item-paging li {
+ float:left;
+ margin:0 1px 0 2px
+}
+.today-item-paging a {
+ display:block;
+ width:12px;
+ height:12px;
+ background-position:-1px -156px;
+ text-indent:-9999em
+}
+.today-item-paging li.selected a {
+ background-position:-16px -156px
+}
+.item-navi-prev {
+ display:block;
+ width:30px;
+ height:54px;
+ position:absolute;
+ top:50%;
+ margin-top:-27px;
+ text-indent:-9999em;
+ left:0;
+ background:url('//img1a.coupangcdn.com/image/coupang/category/category_image_sprite_0820.png') 0 -30px no-repeat
+}
+.item-navi-next {
+ display:block;
+ width:30px;
+ height:54px;
+ position:absolute;
+ top:50%;
+ margin-top:-27px;
+ text-indent:-9999em;
+ right:0;
+ background:url('//img1a.coupangcdn.com/image/coupang/category/category_image_sprite_0820.png') -43px -30px no-repeat
+}
+.item-navi-prev:hover {
+ background-position:0 -90px
+}
+.item-navi-next:hover {
+ background-position:-43px -90px
+}
+.SHOPPING_CATEGORY h2 {
+ background-position:0 -112px
+}
+.shopping-today h2 {
+ background-position:0 -112px
+}
+.local-coupon-today h2 {
+ width:157px;
+ background-position:-187px -112px
+}
+.travel-today h2 {
+ background-position:-347px -112px
+}
+.culture-today h2 {
+ background-position:-518px -112px
+}
+.category-section .today-item {
+ margin:-25px 0 55px
+}
+.category-section .today-item h2 {
+ display:none
+}
+.today-rolling-banner {
+ float:left;
+ width:531px
+}
+.today-rolling-banner img {
+ width:529px;
+ height:378px;
+ border:#ccc solid 1px
+}
+.today-banner {
+ float:right
+}
+.today-banner img {
+ width:267px;
+ height:183px;
+ border:#ccc solid 1px
+}
+.today-item-paging {
+ width:489px
+}
+.today-banner .today-item-paging {
+ width:267px;
+ left:14px;
+ bottom:10px
+}
+.today-banner .bottom-banner {
+ margin-top:10px
+}
+.today-banner .today-prod {
+ float:none
+}
+.category-sub-todayshot {
+ width:980px;
+ height:350px;
+ overflow:hidden;
+ margin-bottom:15px
+}
+.category-sub-todayshot li img {
+ border:#ccc solid 1px
+}
+.category-sub-todayshot .today-item-paging li {
+ margin:0 1px 0 2px
+}
+.category-sub-todayshot div {
+ float:left;
+ position:relative
+}
+.sub-rolling-banner {
+ width:490px;
+ height:350px;
+ margin-right:10px
+}
+.sub-top-banner {
+ width:235px;
+ height:350px;
+ margin-right:10px
+}
+.sub-bottom-banner {
+ width:235px;
+ height:350px;
+ margin-right:0
+}
+.sub-rolling-banner .today-item-paging {
+ width:400px;
+ bottom:30px
+}
+.sub-today-banner .today-item-paging {
+ width:268px;
+ left:15px;
+ bottom:30px
+}
